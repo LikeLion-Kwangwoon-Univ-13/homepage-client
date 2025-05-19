@@ -1,4 +1,5 @@
 # HOMEPAGE CLIENT
+홈페이지 클라이언트 프로젝트입니다.
 ## ⚒️ TECH STACK
 - javascript
 - node 18.18.0
@@ -6,6 +7,7 @@
 - react-dom 19.1.0
 - react-router-dom 7.6.0
 - @tanstack/react-query
+- zustand
 - tailwindcss
 
 ## 🏃🏻 GETTING STARTED
