@@ -67,7 +67,7 @@ export default function BlogHighlightSection() {
 	const navigate = useNavigate();
 
   return (
-    <section className="px-6 py-12 max-w-[1600px] mx-auto text-white">
+    <section className="px-6 py-12 max-w-[1600px] mx-auto text-white">  
       <h1 className="text-4xl font-bold mb-10">이달의 멋사 블로그 우수작</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 justify-items-center">
         {highlightedPosts.map((post, index) => (
@@ -84,6 +84,7 @@ export default function BlogHighlightSection() {
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-[24px] font-bold">최신글</h2>
           <button
+        onClick={() => navigate("/blogs/all")}
 		  	className="text-white text-sm flex items-center gap-1">
             더보기 <span className="text-xl">+</span>
           </button>

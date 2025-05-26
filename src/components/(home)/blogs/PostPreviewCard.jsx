@@ -4,7 +4,7 @@ export default function PostPreviewCard({ title, summary, tags, imageUrl }) {
       className="flex items-center border-b border-gray-700 text-white"
       style={{ width: 1490, height: 300 }}
     >
-      {/* 텍스트 영역 */}
+      {/* 텍스트 */}
       <div
         className="flex flex-col flex-1"
         style={{ paddingLeft: 28 }}
@@ -24,7 +24,7 @@ export default function PostPreviewCard({ title, summary, tags, imageUrl }) {
         </div>
       </div>
 
-      {/* 이미지 영역 */}
+      {/* 이미지 */}
       <div
         className="bg-[#111] border rounded-xl p-2 w-[]"
         style={{
