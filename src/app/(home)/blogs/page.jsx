@@ -5,7 +5,8 @@ export default function BlogPage() {
   return (
     <>
       <Header />
-      <BlogHighlightSectinon />
+      <BlogHighlightSection />
+
     </>
   );
 }
