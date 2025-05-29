@@ -1,5 +1,5 @@
 import { cn } from "@/utils"
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import useInitStore from "@/store/initStore"
 const links = [
 	{
@@ -22,6 +22,7 @@ const links = [
 
 export default function Header() {
 	const { init } = useInitStore()
+	const router = useNavigate()
 	const pathname = useLocation().pathname;
 	const flag = pathname === '/' ? init : true;
 
@@ -38,7 +39,7 @@ export default function Header() {
 	return <div className={cn(container)}>
 		<div
 			onClick={() => router('/')}
-			className="flex items-center gap-x-[4.91px]">
+			className="flex items-center gap-x-[4.91px] cursor-pointer">
 			<img src="/images/logo.png" className="w-[47px] " />
 			<div className="text-white text-[24px] font-bold">광운대학교 멋쟁이 사자처럼</div>
 		</div>
