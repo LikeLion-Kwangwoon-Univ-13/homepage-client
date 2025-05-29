@@ -22,6 +22,7 @@ function Init({ setInit }) {
 	const container = {
 		displays: 'flex flex-col justify-center items-center',
 		text: 'text-white text-[50px]',
+		style: 'cursor-pointer'
 	}
 	return (
 		<div className={cn(container)}
