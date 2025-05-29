@@ -13,7 +13,7 @@ export default function App() {
 						<Route path="ciuriculimms" element={<div>contact</div>} />
 					</Route>
 					<Route path="projects" element={<Project />} />
-					<Route path="blogs" element={<Blog />} />
+  					<Route path="blogs/*" element={<Blog />} />
 					<Route path="teams" element={<Team />} />
 					<Route path="recruit" element={<Recruit />} />
 				</Route>

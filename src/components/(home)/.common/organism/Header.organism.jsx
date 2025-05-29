@@ -7,7 +7,7 @@ const links = [
 		path: '/about'
 	},
 	{
-		name: 'PORJECT',
+		name: 'PROJECT',
 		path: '/projects'
 	},
 	{
