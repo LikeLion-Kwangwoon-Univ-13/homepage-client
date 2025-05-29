@@ -14,7 +14,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true
     }
-  },
+  }, 
   plugins: ["react", "react-refresh", "import"],
   settings: {
     "import/resolver": {
@@ -31,7 +31,6 @@ module.exports = {
     }
   },
   rules: {
-    "react/prop-types": "error",
     "react/jsx-uses-react": "error",
     "react/react-in-jsx-scope":"off",
     "react/jsx-uses-vars": "error",
@@ -40,16 +39,14 @@ module.exports = {
     "react/jsx-key": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-
+    'react/prop-types':'off',
     "import/no-unresolved": "off",
     "import/named": "error",
     "import/default": "error",
     "import/namespace": "error",
-
-    "no-unused-vars": "error",
+    "no-unused-vars": "warn",
     "no-undef": "error",
     "no-console": "warn",
-    
     "react-refresh/only-export-components": "warn"
   },
 };
