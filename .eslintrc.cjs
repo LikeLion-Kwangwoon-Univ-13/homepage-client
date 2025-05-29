@@ -3,6 +3,7 @@ module.exports = {
   env: { browser: true, es2020: true },
   extends: [
     "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/recommended"
   ],
@@ -14,20 +15,41 @@ module.exports = {
       jsx: true
     }
   },
-  plugins: ["react-refresh", "import"],
+  plugins: ["react", "react-refresh", "import"],
   settings: {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".jsx"],
+        "paths": ["src"],
+        "alias": {
+          "@": "./src"
+        }
       }
+    },
+    "react": {
+      "version": "detect"
     }
   },
   rules: {
-    "react-refresh/only-export-components": "off",
-    "react-hooks/rules-of-hooks": "off",
-    "import/no-unresolved": "error",
+    "react/prop-types": "error",
+    "react/jsx-uses-react": "error",
+    "react/react-in-jsx-scope":"off",
+    "react/jsx-uses-vars": "error",
+    "react/no-unused-prop-types": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-key": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+
+    "import/no-unresolved": "off",
     "import/named": "error",
     "import/default": "error",
-    "import/namespace": "error"
+    "import/namespace": "error",
+
+    "no-unused-vars": "error",
+    "no-undef": "error",
+    "no-console": "warn",
+    
+    "react-refresh/only-export-components": "warn"
   },
 };
