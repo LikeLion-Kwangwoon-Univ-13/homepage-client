@@ -1,5 +1,4 @@
 # HOMEPAGE CLIENT
-홈페이지 클라이언트 프로젝트입니다.
 ## ⚒️ TECH STACK
 - javascript
 - node 18.18.0
