@@ -33,8 +33,9 @@ function Init({ setInit }) {
 }
 function Sun({ init }) {
 	const container = {
-		positions: 'absolute',
-		location: !init ? '-bottom-[680px]' : 'bottom-0',
+		positions: 'absolute left-1/2',
+		transform: '-translate-x-1/2',
+		location: !init ? '-bottom-[680px]' : '-bottom-0',
 		animations: 'transition-all duration-[3s] ease-in-out',
 	}
 	return <img src="/images/sun.png" className={cn(container)} />
