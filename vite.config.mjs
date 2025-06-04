@@ -8,9 +8,19 @@ const devConfig = (mode) =>
     // mkcert 필요 시 사용
   };
 
-export default ({ mode }) => {
-  process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
-  return defineConfig({
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '');
+  const envWithProcessPrefix = Object.entries(env).reduce(
+    (prev, [key, val]) => {
+      return {
+        ...prev,
+        [`process.env.${key}`]: JSON.stringify(val)
+      };
+    },
+    {}
+  );
+
+  return {
     ...devConfig(mode),
     plugins: [react(), tailwindcss()],
     resolve: {
@@ -23,7 +33,7 @@ export default ({ mode }) => {
       outDir: "dist",
     },
     define: {
-      "process.env": process.env,
+      ...envWithProcessPrefix
     },
-  });
-};
+  };
+});
