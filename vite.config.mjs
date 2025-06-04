@@ -7,6 +7,7 @@ const devConfig = (mode) =>
   mode === "development" && {
     // mkcert 필요 시 사용
   };
+
 export default ({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
   return defineConfig({
