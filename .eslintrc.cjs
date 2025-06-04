@@ -30,6 +30,9 @@ module.exports = {
       version: "detect",
     },
   },
+  env: {
+    node: true,
+  },
   rules: {
     "react/jsx-uses-react": "error",
     "react/react-in-jsx-scope": "off",
