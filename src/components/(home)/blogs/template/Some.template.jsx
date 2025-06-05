@@ -75,7 +75,7 @@ export default function BlogHighlightSection() {
       <div style={{ marginTop: "150px", marginBottom: "110px"}}>
       <div className="mb-6 w-full flex justify-center">
         <div className="w-[1450px]">
-          <Input state = {[query,setQuery]} placeholder="검색어를 입력하세요" />
+          <Input state = {[query,setQuery]} placeholder="멋쟁이 사자처럼의 다양한 프로젝트를 검색해보세요!" />
         </div>
       </div>
       </div>

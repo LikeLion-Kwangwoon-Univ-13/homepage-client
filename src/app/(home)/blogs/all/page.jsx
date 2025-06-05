@@ -46,7 +46,7 @@ export default function BlogAllPage() {
       {/* 검색창 */}
       <div className="mb-10 flex justify-center" style={{ marginTop: "50px" }}>
         <div className="w-full max-w-[1400px]">
-          <Input state={[query, setQuery]} placeholder="검색어를 입력하세요" />
+          <Input state={[query, setQuery]} placeholder="멋쟁이 사자처럼의 다양한 프로젝트를 검색해보세요!" />
         </div>
       </div>
 
