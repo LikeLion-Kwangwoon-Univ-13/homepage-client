@@ -3,71 +3,71 @@ export const execMembers = [
     name: "강평중",
     role: "13기 대표",
     part: "기획",
-    stack: ["운영", "기획", "관리"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "https://github.com/example",
     instagram: "https://instagram.com/example"
   },
   {
-    name: "이서준",
-    role: "부대표",
+    name: "박경민",
+    role: "13기 부대표",
     part: "프론트엔드",
-    stack: ["React", "Tailwind", "Vite"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   },
   {
-    name: "김지은",
-    role: "디자인 총괄",
+    name: "김동균",
+    role: "프론트엔드 파트장",
     part: "디자인",
-    stack: ["Figma", "UI", "UX"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   },
   {
-    name: "최민호",
-    role: "백엔드 리드",
+    name: "오준혁",
+    role: "백엔드 파트장",
     part: "백엔드",
-    stack: ["Node.js", "DB", "API"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   },
   {
-    name: "박수진",
-    role: "기획 리드",
+    name: "임수민",
+    role: "디자인 파트장",
     part: "기획",
-    stack: ["문서", "노션", "피그마"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   },
   {
-    name: "정하윤",
-    role: "운영진",
+    name: "유승연",
+    role: "디자인 운영진",
     part: "디자인",
-    stack: ["브랜딩", "디자인", "UX"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   },
   {
-    name: "류시현",
-    role: "운영진",
+    name: "박민형",
+    role: "프론트엔트 운영진",
     part: "프론트엔드",
-    stack: ["HTML", "CSS", "JS"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   },
   {
-    name: "이준혁",
-    role: "운영진",
+    name: "고은빈",
+    role: "프론트엔드 운영진",
     part: "백엔드",
-    stack: ["Express", "MySQL", "API"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   },
   {
-    name: "김태영",
-    role: "운영진",
+    name: "조성찬",
+    role: "백엔드 운영진",
     part: "기획",
-    stack: ["피그마", "운영", "커뮤니케이션"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   }
@@ -78,103 +78,103 @@ export const babyLions = [
     name: "이아란",
     role: "디자인",
     part: "디자인",
-    stack: ["Figma", "브랜딩", "포토샵"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   },
   {
-    name: "정우진",
-    role: "프론트엔드",
-    part: "프론트엔드",
-    stack: ["React", "JS", "CSS"],
-    github: "#",
-    instagram: "#"
-  },
-  {
-    name: "신예린",
-    role: "백엔드",
-    part: "백엔드",
-    stack: ["Node", "Express", "MySQL"],
-    github: "#",
-    instagram: "#"
-  },
-  {
-    name: "박시훈",
-    role: "기획",
-    part: "기획",
-    stack: ["문서", "기획서", "리서치"],
-    github: "#",
-    instagram: "#"
-  },
-  {
-    name: "최윤아",
+    name: "김현진",
     role: "디자인",
     part: "디자인",
-    stack: ["UX", "UI", "Figma"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   },
   {
-    name: "김도현",
-    role: "백엔드",
-    part: "백엔드",
-    stack: ["MongoDB", "Node.js", "API"],
-    github: "#",
-    instagram: "#"
-  },
-  {
-    name: "윤하린",
-    role: "기획",
-    part: "기획",
-    stack: ["기획", "소통", "문서작성"],
-    github: "#",
-    instagram: "#"
-  },
-  {
-    name: "이재윤",
+    name: "박현지",
     role: "프론트엔드",
     part: "프론트엔드",
-    stack: ["React", "Vite", "Tailwind"],
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   },
   {
-    name: "박유정",
-    role: "디자인",
-    part: "디자인",
-    stack: ["일러스트", "UX", "디자인"],
-    github: "#",
-    instagram: "#"
-  },
-  {
-    name: "정민수",
-    role: "백엔드",
-    part: "백엔드",
-    stack: ["Express", "DB", "API"],
-    github: "#",
-    instagram: "#"
-  },
-  {
-    name: "조예원",
-    role: "기획",
-    part: "기획",
-    stack: ["조직", "기획안", "운영"],
-    github: "#",
-    instagram: "#"
-  },
-  {
-    name: "한유정",
-    role: "디자인",
-    part: "디자인",
-    stack: ["UX", "그래픽", "Figma"],
-    github: "#",
-    instagram: "#"
-  },
-  {
-    name: "서지후",
+    name: "엄태성",
     role: "프론트엔드",
     part: "프론트엔드",
-    stack: ["Next.js", "React", "TypeScript"],
+    stack: ["기술1", "기술2", "기술3"],
+    github: "#",
+    instagram: "#"
+  },
+  {
+    name: "황지영",
+    role: "프론트엔드",
+    part: "프론트엔드",
+    stack: ["기술1", "기술2", "기술3"],
+    github: "#",
+    instagram: "#"
+  },
+  {
+    name: "김준호",
+    role: "프론트엔드",
+    part: "프론트엔드",
+    stack: ["기술1", "기술2", "기술3"],
+    github: "#",
+    instagram: "#"
+  },
+  {
+    name: "정서진",
+    role: "프론트엔드",
+    part: "프론트엔드",
+    stack: ["기술1", "기술2", "기술3"],
+    github: "#",
+    instagram: "#"
+  },
+  {
+    name: "강준우",
+    role: "백엔드",
+    part: "백엔드",
+    stack: ["기술1", "기술2", "기술3"],
+    github: "#",
+    instagram: "#"
+  },
+  {
+    name: "정지환",
+    role: "백엔드",
+    part: "백엔드",
+    stack: ["기술1", "기술2", "기술3"],
+    github: "#",
+    instagram: "#"
+  },
+  {
+    name: "강선후",
+    role: "백엔드",
+    part: "백엔드",
+    stack: ["기술1", "기술2", "기술3"],
+    github: "#",
+    instagram: "#"
+  },
+  {
+    name: "최희선",
+    role: "백엔드",
+    part: "백엔드",
+    stack: ["기술1", "기술2", "기술3"],
+    github: "#",
+    instagram: "#"
+  },
+  {
+    name: "이동호",
+    role: "백엔드",
+    part: "백엔드",
+    stack: ["기술1", "기술2", "기술3"],
+    github: "#",
+    instagram: "#"
+  },
+  {
+    name: "이효원",
+    role: "백엔드",
+    part: "백엔드",
+    stack: ["기술1", "기술2", "기술3"],
     github: "#",
     instagram: "#"
   }
