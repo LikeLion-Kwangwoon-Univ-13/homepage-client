@@ -3,6 +3,7 @@ import { execMembers, babyLions } from "../teamData";
 
 export default function TeamSection() {
   return (
+    <section className="relative">
     <section className="relative text-white w-full px-60 py-12 mx-auto">
       {/* 상단 제목 */}
       <h2 className="text-[30px] font-bold mb-6">
@@ -33,12 +34,6 @@ export default function TeamSection() {
 
       {/* 아기사자 섹션 */}
       <div className="relative">
-        {/* 배경 이미지 */}
-        <img
-          src="/images/BlendGroup11.png"
-          alt="배경"
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1728px] h-[1124px] z-[1]"
-        />
 
         {/* 아기사자 카드들 */}
         <div className="relative z-10 mt-30 mb-12">
@@ -69,6 +64,13 @@ export default function TeamSection() {
           </div>
         </div>
       </div>
+    </section>
+    {/* 배경 이미지 */}
+        <img
+          src="/images/BlendGroup11.png"
+          alt="배경"
+          className="absolute bottom-0 left-0 w-screen h-auto z-[1]"
+        />
     </section>
   );
 }
