@@ -1,5 +1,3 @@
-import React from "react";
-
 const CurriculumBt = ({ selected, onSelect }) => {
   const tabs = [
     { id: "backend", label: "백엔드" },

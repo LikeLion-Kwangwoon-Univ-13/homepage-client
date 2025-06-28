@@ -51,11 +51,11 @@ const Curriculum = () => {
 			<li
 			key={item.number}
 			ref={(el) => (sectionRefs.current[index] = el)}
-			className="relative flex items-start mt-[134px] ml-[96px] mr-[176px]"
+			className="relative flex items-start mt-[40px] ml-[96px] mr-[176px]"
 			>
 			<div className="relative flex flex-col items-center mr-6">
 				{index !== current.length -1 && (
-				<div className="absolute top-[47.44px] h-[calc(100%+160px)] w-px bg-white"></div>
+				<div className="mt-[20px] absolute top-[40px] h-[calc(100%+20px)] w-px bg-white"></div>
 				)}
 
 				<div
@@ -79,9 +79,9 @@ const Curriculum = () => {
 			))}
 		</ul>
 
-		<footer className="mt-[576px] text-sm text-gray-500 text-center flex flex-row justify-between item-center gap-3">
-    		<div className="font-semibold">광운대 멋쟁이사자처럼</div>
-    		<div className="text-gray-400">© 2025 LIKE LION KWUNIV</div>
+		<footer className="mt-[576px] text-sm text-gray-500 text-center flex flex-row justify-between items-center gap-3">
+			<div className="font-semibold">광운대 멋쟁이사자처럼</div>
+			<div className="text-gray-400">© 2025 LIKE LION KWUNIV</div>
 			<div className="flex items-center gap-3">
 				<span>Contact us!</span>
 				<img src="/images/Email.png" alt="mail" className="w-4 h-4" />
