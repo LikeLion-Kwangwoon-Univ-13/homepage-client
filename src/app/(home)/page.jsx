@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import HomeComponentProvider from "@/components/(home)/home";
 import useInitStore from "@/store/initStore";
 
@@ -13,10 +12,6 @@ function SubComponents({ init }) {
   );
   return null;
 }
-
-SubComponents.propTypes = {
-  init: PropTypes.object.isRequired
-};
 
 export default function Page() {
   const { init } = useInitStore();

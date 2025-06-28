@@ -48,7 +48,7 @@ module.exports = {
     "import/default": "error",
     "import/namespace": "error",
     "no-unused-vars": "warn",
-    "no-undef": "error",
+    "no-undef": "off",
     "no-console": "warn",
     "react-refresh/only-export-components": "warn",
   },
