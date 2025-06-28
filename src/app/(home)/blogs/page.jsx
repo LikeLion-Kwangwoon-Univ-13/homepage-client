@@ -2,6 +2,7 @@ import BlogHighlightSection from "../../../components/(home)/blogs/template/Some
 import { Routes, Route } from "react-router-dom";
 import BlogAllPage from "./all/page.jsx";
 
+
 export default function BlogPage() {
   return (
     <>

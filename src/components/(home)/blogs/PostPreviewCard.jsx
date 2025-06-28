@@ -4,6 +4,7 @@ export default function PostPreviewCard({ title, summary, tags, imageUrl }) {
       className="flex items-center border-b border-gray-700 text-white"
       style={{ width: 1490, height: 300 }}
     >
+      
       {/* 텍스트 */}
       <div
         className="flex flex-col flex-1"

@@ -1,19 +1,39 @@
 import { useNavigate } from "react-router-dom";
-import BlogCard from "../../../../components/(home)/blogs/BlogCard";
+import { useEffect,useState } from "react";
+import Input from "../../../../components/(home)/_widget/Input";
+import PostPreviewCard from "../../../../components/(home)/blogs/PostPreviewCard";
 
-const dummyPosts = Array(10).fill({
-	title: "제목 : 쯔양이 먹고 가서 유명해진 호반 닭갈비",
-	summary: "글 내용 그거 아세요 끝에 붙어있는 하얀거 이름은 골락입니다. 찰떡 아이스는 원래 3알이었고 우리 아빠 오늘 일본어 공부 하심 우리엄마 독일어 하는데...",
-	tags: ["13기", "해커톤", "안드로이드"]
-});
+const recentPosts = [
+  {
+    title: "제목 : 쯔양이 먹고 가서 유명해진 호반 닭갈비",
+    summary: "무슨 말인지 모르겠음 그냥 쏼라쏼라쏼라쏼라쏼라.",
+    tags: ["배고파", "마니", "꼬르륵"],
+    imageUrl: "/images/blog1.jpg",
+  },
+   {
+    title: "제목 : 쯔양이 먹고 가서 유명해진 호반 닭갈비",
+    summary: "무슨 말인지 모르겠음 그냥 쏼라쏼라쏼라쏼라쏼라.",
+    tags: ["배고파", "마니", "꼬르륵"],
+    imageUrl: "/images/blog1.jpg",
+  },
+   {
+    title: "제목 : 쯔양이 먹고 가서 유명해진 호반 닭갈비",
+    summary: "무슨 말인지 모르겠음 그냥 쏼라쏼라쏼라쏼라쏼라.",
+    tags: ["배고파", "마니", "꼬르륵"],
+    imageUrl: "/images/blog1.jpg",
+  },
+];
 
 export default function BlogAllPage() {
-	const navigate = useNavigate();
-
-	return (
-		<div className="w-full min-h-screen bg-black text-white">
-			{/* 뒤로가기 버튼 */}
-			<div className="max-w-4xl mx-auto px-6 pt-10 pb-4">
+  const navigate = useNavigate();
+  const [query, setQuery] = useState("");
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+  return (
+    <div className="w-full min-h-screen bg-black text-white px-6 py-12">
+		<div className="max-w-[1450px] mx-auto mb-6" style={{ marginTop: "30px" }}>
 				<button onClick={() => navigate(-1)} className="mr-4">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none"
 						viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
@@ -23,18 +43,27 @@ export default function BlogAllPage() {
 					</svg>
 				</button>
 			</div>
+      {/* 검색창 */}
+      <div className="mb-10 flex justify-center" style={{ marginTop: "50px" }}>
+        <div className="w-full max-w-[1400px]">
+          <Input state={[query, setQuery]} placeholder="멋쟁이 사자처럼의 다양한 프로젝트를 검색해보세요!" />
+        </div>
+      </div>
 
-			{/* 최신글 헤더 */}
-			<div className="max-w-4xl mx-auto px-6 mb-6">
-				<h2 className="text-xl font-bold">최신글</h2>
-			</div>
+      {/* 최신글 헤더 + 더보기 */}
+      <div className="max-w-[1450px] mx-auto" style={{ marginTop: "100px" }}>
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-[24px] font-bold">최신글</h2>
+          
+        </div>
 
-			{/* 블로그 카드 리스트 */}
-			<div className="space-y-10 max-w-4xl mx-auto px-6">
-				{dummyPosts.map((post, i) => (
-					<BlogCard key={i} {...post} />
-				))}
-			</div>
-		</div>
-	);
+        {/* 최신글 리스트 */}
+        <div className="flex flex-col items-center divide-y divide-gray-700">
+          {recentPosts.slice(0, 5).map((post, i) => (
+            <PostPreviewCard key={i} {...post} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
