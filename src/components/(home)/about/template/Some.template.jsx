@@ -36,13 +36,17 @@ const Curriculum = () => {
 		/>
 
 		<div className="relative z-10">
-		<h2 className="text-center text-lg md:text-2xl mt-[180px] mb-[110px]">
+		<h2
+			style={{fontFamily: 'Space Grotesk', fontSize: 30}}
+			className="font-space text-curriculum-title font-bold text-center md:text-2xl mt-[180px] mb-[110px]">
 			광운대 멋쟁이사자처럼 13기 커리큘럼을 소개합니다
 		</h2>
 
 		<CurriculumBt selected={selected} onSelect={setSelected} />
 
-		<h3 className="text-2xl font-semibold mb-8 mt-[164px] ml-[96px]">
+		<h3
+			style={{fontFamily: 'Space Grotesk', fontSize: 30}}
+			className="font-space text-curriculum-title font-bold mb-8 mt-[164px] ml-[96px]">
 			{selected === "backend"	? "백엔드 커리큘럼 상세보기": selected === "frontend" ? "프론트엔드 커리큘럼 상세보기" : "디자인 커리큘럼 상세보기"}
 		</h3>
 
@@ -51,11 +55,11 @@ const Curriculum = () => {
 			<li
 			key={item.number}
 			ref={(el) => (sectionRefs.current[index] = el)}
-			className="relative flex items-start mt-[40px] ml-[96px] mr-[176px]"
+			className="relative flex items-start ml-[96px] mr-[176px] min-h-[180px] pt-[30px] pb-[30px]"
 			>
 			<div className="relative flex flex-col items-center mr-6">
 				{index !== current.length -1 && (
-				<div className="mt-[20px] absolute top-[40px] h-[calc(100%+20px)] w-px bg-white"></div>
+				<div className="mt-[20px] absolute top-[50px] h-[calc(100%+100px)] w-px bg-white"></div>
 				)}
 
 				<div
@@ -70,8 +74,8 @@ const Curriculum = () => {
 			</div>
 
 			<div>
-				<h4 className="text-xl font-bold mb-2">{item.title}</h4>
-				<p className="text-gray-300 text-sm md:text-base leading-relaxed whitespace-pre-line">
+				<h4 style={{fontFamily: 'Space Grotesk', fontSize: 30}} className="font-space text-curriculum-title font-bold mb-2">{item.title}</h4>
+				<p style={{fontFamily: 'Space Grotesk', fontSize: 24}}className="font-space text-curriculum-desc font-medium text-gray-300 md:text-base leading-relaxed whitespace-pre-line">
 				{item.description}
 				</p>
 			</div>
