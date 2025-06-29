@@ -30,7 +30,13 @@ const Curriculum = () => {
 	return (
 	<div className="relative bg-black text-white min-h-screen px-6 md:px-24 py-12 overflow-hidden">
 		<img
-		src="/images/g91 2.png"
+		src={
+			selected === "backend"
+			? "/images/backend.png"
+			: selected === "frontend"
+			? "/images/frontend.png"
+			: "/images/design.png"
+		}
 		alt="background globe"
 		className="absolute bottom-100 right-0 w-[1000px] opacity-90 brightness-125 pointer-events-none select-none z-0"
 		/>
