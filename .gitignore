@@ -35,3 +35,4 @@ dist-ssr
 .env.production.local
 .env.preview.local
 .env.staging.local
+yarn.lock
