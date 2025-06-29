@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectMainCard from "./ProjectMainCard";
 
+
 const dummyProjects = [
   {
     id: 1,
@@ -45,13 +46,8 @@ export default function ProjectSection() {
     const [startIndex, setStartIndex] = useState(0);
     const navigate = useNavigate();
 
-    navigate("/projects");
-    //navigate(`/projects/${project.id}`);
-
     const CARD_WIDTH=545;
     const GAP=48;
-
-    //const visibleProjects = dummyProjects.slice(startIndex, startIndex + 5);
 
     const handlePrev = () => {
         if (startIndex !== 0) 
@@ -60,7 +56,7 @@ export default function ProjectSection() {
     };
 
     const handleNext = () => {
-        if (startIndex < dummyProjects.length) setStartIndex(startIndex + 1);
+        if (startIndex < 2) setStartIndex(startIndex + 1);
     };
 
     return (
@@ -77,7 +73,7 @@ export default function ProjectSection() {
                     </button>
                 </div>
 
-                <button onClick={() => navigate("/projects")} style={{fontFamily: 'Space Grotesk', fontSize: 20}} className="w-[217px] h-[71px] mt-[32px] px-4 py-2 bg-black text-white border border-white rounded-[16px]">
+                <button onClick={() => navigate("/projects/projectlist")} style={{fontFamily: 'Space Grotesk', fontSize: 20}} className="w-[217px] h-[71px] mt-[32px] px-4 py-2 bg-black text-white border border-white rounded-[16px]">
                     More project?
                 </button>
             </div>
