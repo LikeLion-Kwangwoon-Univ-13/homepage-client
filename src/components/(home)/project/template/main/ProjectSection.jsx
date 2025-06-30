@@ -60,7 +60,7 @@ export default function ProjectSection() {
     };
 
     return (
-        <section className="flex flex-row relative z-10 mt-[143px] px-6 md:pl-24">
+        <section className="flex flex-row relative z-10 mt-[140px] px-6 md:pl-24">
             <div className="mr-[139px]">
                 <h2 style={{fontFamily:'Space Grotesk', fontSize: 48}} className="text-white text-3xl font-bold mb-8 mt-[50px]">Works</h2>
 

@@ -9,7 +9,9 @@ export default function ProjectDetailPage() {
   return (
     <div className="min-h-screen bg-black text-white px-6 md:px-24">
          <button onClick={()=>navigate(`/projects`)} className="ml-[70px] mt-[78px] text-4xl w-[20px] z-0">
-            ❮
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-11 h-24">
+            <path strokeLinecap="round" strokeLinejoin="round"d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
         </button>
         <div className="mt-[-50px] flex flex-col items-center">
             <div>
