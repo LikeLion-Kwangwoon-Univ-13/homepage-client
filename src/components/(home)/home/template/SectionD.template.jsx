@@ -1,5 +1,6 @@
 import { cn } from "@/utils"
 import style from "../../style"
+import JoinButton from "../atom/Join"
 
 export default function SectionD() {
 	const container = {
@@ -7,26 +8,22 @@ export default function SectionD() {
 		text: 'text-white',
 		displays: 'flex flex-col justify-center relative',
 		padding: 'px-[15%]',
-		gap: 'gap-10'
+		gap: 'gap-10',
+		backgrounds: 'bg-[url(/images/noise.png)]'
 	}
 
 	const titleStyle = {
-		text: 'text-[96px] font-bold leading-[1.1] tracking-wide',
+		displays: 'flex flex-col gap-y-4',
+		text: 'text-[132px] font-bold leading-[1.1] tracking-wide',
 		background: 'bg-gradient-to-b from-white to-white/80 bg-clip-text',
 	}
 
 	const subtitleStyle = {
-		text: 'text-[28px] tracking-wide',
-		margin: '-mt-2'
+		text: 'text-[48px] tracking-wide',
+		margin: '-mt-2',
+		fonts: 'font-bold'
 	}
 
-	const buttonStyle = {
-		positions: 'relative',
-		border: 'border-[1px] border-white',
-		padding: 'pl-[31px] pt-[18px]',
-		text: 'text-[24px] leading-none text-white',
-		width: 'w-[282px] h-[70px]',
-	}
 
 	const footerStyle = {
 		positions: 'absolute bottom-0 left-0 right-0',
@@ -45,19 +42,16 @@ export default function SectionD() {
 
 	return (
 		<div className={cn(container)}>
-			<div className="w-full flex flex-col text-white">
-				<h1 className={cn(titleStyle)}>
-					Be the LION,<br />
-					Rule Your World!
-				</h1>
-			</div>
-			<p className={cn(subtitleStyle)}>: 멋사랑 어흥해</p>
-			<div className="w-full flex justify-center">
-				<div className={cn(buttonStyle)} onClick={() => window.location.href = '/recruit'}>
-					<div>지원하기</div>
-					<img src="/images/arrow.png" className="absolute bottom-[15.81px]" />
+			<div className="relative w-full h-[614px] flex flex-col gap-y-7 text-white pl-[90px] pt-[31px]">
+				<img src="/images/shape2.png" className="absolute top-4 right-12" />
+				<div className={cn(titleStyle)}>
+					<div>Be the LION,</div>
+					<div>Rule Your World!</div>
 				</div>
+				<div className={cn(subtitleStyle)}>: 멋사랑 어흥해</div>
+				<img src="/images/shape1.png" className="absolute bottom-0 left-0" />
 			</div>
+			<JoinButton />
 			<div className={cn(footerStyle)}>
 				<div className="text-white text-[20px]">광운대하교 멋쟁이사자처럼</div>
 				<span className="text-white text-[20px]">© 2025 LIKELION KWUNIV</span>
