@@ -1,8 +1,17 @@
 import { cn } from "@/utils"
 import style from "../../style"
 import JoinButton from "../atom/Join"
+import { useEffect, useState } from "react"
 
 export default function SectionD() {
+	const [twincle, setTwincle] = useState(false);
+	useEffect(() => {
+		const timer = setInterval(() => {
+			setTwincle(!twincle);
+		}, 300)
+		return () => clearInterval(timer)
+	}, [twincle])
+
 	const container = {
 		size: style.size,
 		text: 'text-white',
@@ -21,7 +30,8 @@ export default function SectionD() {
 	const subtitleStyle = {
 		text: 'text-[48px] tracking-wide',
 		margin: '-mt-2',
-		fonts: 'font-bold'
+		fonts: 'font-bold',
+		style: twincle ? 'text-white' : 'text-white/70',
 	}
 
 

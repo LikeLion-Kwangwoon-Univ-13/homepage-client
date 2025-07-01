@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import JoinButton from '../atom/Join'
 
 export default function SectionA() {
-	const { init, setInit } = useInitStore()
+	const { init, setInit } = useInitStore();
 
 	const container = {
 		positions: 'relative',
@@ -44,6 +44,9 @@ function Init({ setInit }) {
 }
 
 function Values({ init }) {
+	const [frontHover, setFrontHover] = useState(false);
+	const [backHover, setBackHover] = useState(false);
+	const [uiuxHover, setUiuxHover] = useState(false);
 	const container = {
 		positions: 'z-20',
 		opacity: init ? 'opacity-100' : 'opacity-0',
@@ -55,13 +58,15 @@ function Values({ init }) {
 		location: !init ? ' left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2' : ' top-1/2 -translate-y-1/2 left-[5%]',
 		animations: 'transition-all duration-1000 delay-[2s]',
 		texts: 'text-[64px] leading-none ',
+		style: 'text-white ',
 	}
 	const frontText = {
 		positions: 'absolute top-[36%] -translate-y-1/2 ',
 		text: 'text-[64px] leading-none',
 		location: !init ? ' left-1/2 -translate-x-1/2' : ' left-[30%]',
 		animations: 'transition-all duration-1000 delay-[2s]',
-		textStyle: 'text-[64px] leading-none',
+		textStyle: 'text-[64px] leading-none ',
+		pointer: 'cursor-pointer',
 	}
 	const backText = {
 		positions: 'absolute top-[43%] -translate-y-1/2 ',
@@ -69,6 +74,7 @@ function Values({ init }) {
 		location: !init ? ' left-1/2 -translate-x-1/2' : ' left-[25%]',
 		animations: 'transition-all duration-1000 delay-[2s]',
 		textStyle: 'text-[64px] leading-none',
+		pointer: 'cursor-pointer',
 	}
 	const uiuxText = {
 		positions: 'absolute bottom-[36%] -translate-y-1/2 ',
@@ -84,15 +90,16 @@ function Values({ init }) {
 		location: !init ? ' left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2' : ' top-1/2 -translate-y-1/2 right-[5%]',
 		animations: 'transition-all duration-1000 delay-[2s]',
 		textStyle: 'text-[64px] leading-none',
+		pointer: 'cursor-pointer',
 	}
 	return <div className={cn(container)}>
 		<div className={cn(likeLion)}>
 			<div>LIKE</div>
 			<div>LION</div>
 		</div>
-		<div className={cn(backText)}>BACKEND</div>
-		<div className={cn(frontText)}>FRONTEND</div>
-		<div className={cn(uiuxText)}>UXUI DESIGN</div>
+		<div className={cn(backText)} onMouseEnter={() => setBackHover(true)} onMouseLeave={() => setBackHover(false)}>BACKEND</div>
+		<div className={cn(frontText)} onMouseEnter={() => setFrontHover(true)} onMouseLeave={() => setFrontHover(false)}>FRONTEND</div>
+		<div className={cn(uiuxText)} onMouseEnter={() => setUiuxHover(true)} onMouseLeave={() => setUiuxHover(false)}>UXUI DESIGN</div>
 		<div className={cn(univ)}>
 			<div className="text-[60px] font-[100]">Exploding</div>
 			<div className="text-[98px]">X</div>
