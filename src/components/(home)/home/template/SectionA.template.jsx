@@ -59,6 +59,7 @@ function Values({ init }) {
 		animations: 'transition-all duration-1000 delay-[2s]',
 		texts: 'text-[64px] leading-none ',
 		style: 'text-white ',
+		pointer: 'cursor-default',
 	}
 	const frontText = {
 		positions: 'absolute top-[36%] -translate-y-1/2 ',
@@ -82,6 +83,7 @@ function Values({ init }) {
 		location: !init ? ' left-1/2 -translate-x-1/2' : ' left-[30%]',
 		animations: 'transition-all duration-1000 delay-[2s]',
 		textStyle: 'text-[64px] leading-none',
+		pointer: 'cursor-pointer',
 	}
 	const univ = {
 		positions: 'absolute',
@@ -90,7 +92,7 @@ function Values({ init }) {
 		location: !init ? ' left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2' : ' top-1/2 -translate-y-1/2 right-[5%]',
 		animations: 'transition-all duration-1000 delay-[2s]',
 		textStyle: 'text-[64px] leading-none',
-		pointer: 'cursor-pointer',
+		pointer: 'cursor-default',
 	}
 	return <div className={cn(container)}>
 		<div className={cn(likeLion)}>
@@ -136,6 +138,7 @@ function FloatButton({ init }) {
 		hover: 'hover:bg-[#FF8534] transition-colors duration-300',
 		shadow: 'shadow-xl shadow-black/20',
 		transform: 'transition-transform duration-1000',
+		pointer: 'cursor-default',
 	}
 
 	const textStyle = {
