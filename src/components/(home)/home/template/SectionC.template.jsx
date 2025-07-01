@@ -9,24 +9,6 @@ export default function SectionC() {
 		gap: 'gap-28',
 	}
 
-	const backgroundStyle = {
-		display: 'flex flex-col items-center',
-		size: 'w-full h-full',
-		background: 'bg-[linear-gradient(51deg,#0D0300_25.2%,#E5320F_60.78%,#E97318_72.44%)]',
-		filter: 'blur-[212px]',
-		rounded: 'rounded-[1676px]'
-	}
-
-	const titleStyle = {
-		text: 'text-[51px] font-light tracking-[0.2em] uppercase',
-	}
-
-	const valuesContainer = {
-		displays: 'flex justify-between items-start',
-		size: 'w-full',
-		gap: 'gap-16'
-	}
-
 	const valueStyle = {
 		displays: 'flex flex-col items-center',
 		gap: 'gap-8',
@@ -52,10 +34,6 @@ export default function SectionC() {
 		hover: 'hover:border-white/40 transition-colors duration-300'
 	}
 
-	const iconInner = {
-		transform: '-rotate-45',
-		text: 'text-[32px]'
-	}
 
 	return (
 		<div className={cn(container)}>
@@ -64,23 +42,23 @@ export default function SectionC() {
 				<div className="text-[51px] font-light tracking-[0.2em] uppercase">Core Values</div>
 				<div className="flex gap-x-32 items-start">
 					<div className={cn(valueStyle)}>
-						<div className={cn(iconContainer)}>
-							<div className={cn(iconInner)}>▲</div>
-						</div>
+						<img
+							src="/images/core1.png"
+						/>
 						<h3 className={cn(valueTitle)}>Responsibility</h3>
 						<p className={cn(valueDesc)}>덧푸를 성실하고 공개적 목표를 위해 결과를 만들어내는 자세</p>
 					</div>
 					<div className={cn(valueStyle)}>
-						<div className={cn(iconContainer)}>
-							<div className={cn(iconInner)}>●</div>
-						</div>
+						<img
+							src="/images/core2.png"
+						/>
 						<h3 className={cn(valueTitle)}>Curiosity</h3>
 						<p className={cn(valueDesc)}>자발적인 구구 새로운 도전을 시도하고 상황을 누려보지 않는 자세</p>
 					</div>
 					<div className={cn(valueStyle)}>
-						<div className={cn(iconContainer)}>
-							<div className={cn(iconInner)}>■</div>
-						</div>
+						<img
+							src="/images/core3.png"
+						/>
 						<h3 className={cn(valueTitle)}>Cooperation</h3>
 						<p className={cn(valueDesc)}>팀원들과 함께 목표를 달성하기 위해 유연하게 협력하는 자세</p>
 					</div>
