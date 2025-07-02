@@ -2,6 +2,7 @@ import { cn } from "@/utils"
 import style from "../../style"
 import JoinButton from "../atom/Join"
 import { useEffect, useState } from "react"
+import Footer from "../../_common/organism/Footer.organism";
 
 export default function SectionD() {
 	const [twincle, setTwincle] = useState(false);
@@ -15,9 +16,8 @@ export default function SectionD() {
 	const container = {
 		size: style.size,
 		text: 'text-white',
-		displays: 'flex flex-col justify-center relative',
+		displays: 'flex flex-col relative',
 		padding: 'px-[15%]',
-		gap: 'gap-10',
 		backgrounds: 'bg-[url(/images/noise.png)]'
 	}
 
@@ -35,20 +35,6 @@ export default function SectionD() {
 	}
 
 
-	const footerStyle = {
-		positions: 'absolute bottom-0 left-0 right-0',
-		displays: 'flex justify-between items-center',
-		sizes: 'h-[80px]',
-		backgrounds: 'bg-[#1A1A1A]',
-		padding: 'px-[23px] ',
-		text: 'text-white/40 text-[15px] tracking-wide'
-	}
-
-	const socialLinks = {
-		displays: 'flex items-center gap-3.5',
-		text: 'text-[16px]',
-		hover: '[&_a]:hover:text-white/60 [&_a]:transition-colors'
-	}
 
 	return (
 		<div className={cn(container)}>
@@ -61,17 +47,9 @@ export default function SectionD() {
 				<div className={cn(subtitleStyle)}>: 멋사랑 어흥해</div>
 				<img src="/images/shape1.png" className="absolute bottom-0 left-0" />
 			</div>
+			<div className="h-[5%] w-full" />
 			<JoinButton />
-			<div className={cn(footerStyle)}>
-				<div className="text-white text-[20px]">광운대하교 멋쟁이사자처럼</div>
-				<span className="text-white text-[20px]">© 2025 LIKELION KWUNIV</span>
-				<div className={cn(socialLinks)}>
-					<a href="#">Contact us!</a>
-					<a href="#" className="text-[20px]">📧</a>
-					<a href="#" className="text-[20px]">📷</a>
-					<a href="#" className="text-[20px]">🐱</a>
-				</div>
-			</div>
+			<Footer />
 		</div>
 	)
 }

@@ -87,14 +87,14 @@ export default function SectionB() {
 		transition: 'transition-all  ease-linear',
 	}
 	const likeLion = {
-		positions: 'absolute bottom-[2%] -translate-y-1/2',
-		left: init ? 'right-[8%] duration-1200' : '-right-222 duration-100',
+		positions: 'absolute -bottom-[12%] -translate-y-1/2',
+		left: init ? 'right-[3%] duration-1200' : '-right-222 duration-100',
 		text: 'text-[220px]',
 		transition: 'transition-all  ease-linear',
 	}
 	const viewMore = {
 		positions: 'absolute right-1/2 translate-x-1/2',
-		top: init ? 'bottom-[2%] -translate-y-1/2 duration-1200' : '-bottom-100 duration-100',
+		top: init ? 'bottom-0 -translate-y-1/2 duration-1200' : '-bottom-100 duration-100',
 		size: 'w-[264px] h-[70px]',
 		boundaries: 'rounded-full border-2',
 		fonts: 'text-[36px] leading-none',

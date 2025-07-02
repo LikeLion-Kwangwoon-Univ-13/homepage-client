@@ -11,7 +11,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about">
             <Route index element={<About />} />
-            <Route path="curriculums" element={<div>contact</div>} />
+            {/* <Route path="curriculums" element={<Curriculum />} /> */}
           </Route>
           <Route path="blogs/*" element={<Blog />} />
           <Route path="projects/*" element={<Project />} />

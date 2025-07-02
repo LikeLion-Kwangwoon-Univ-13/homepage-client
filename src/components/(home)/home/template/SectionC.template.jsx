@@ -18,8 +18,8 @@ export default function SectionC() {
 		text: 'text-[28px] font-bold tracking-wide'
 	}
 	const valueDesc = {
+		width: 'w-full',
 		text: 'text-[18px] text-white/70 leading-relaxed',
-		size: 'max-w-[280px]'
 	}
 	const [isVisible, setIsVisible] = useState([false, false, false]);
 	const valueRefs = useRef([]);
