@@ -52,7 +52,7 @@ export default function ProjectDetailPage() {
                 </div>
             </div>
 
-            <div className="mt-[40px] flex flex-row items-center">
+            <div className="mt-[40px] flex flex-row">
                 <ProjectDetailInfoCard />
                 <ProjectSummarySection title={title} />
             </div>
