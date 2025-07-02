@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams,useNavigate } from "react-router-dom";
 import ProjectSummarySection from "../../../../components/(home)/project/template/list/ProjectSummarySection";
 import ProjectDetailInfoCard from "../../../../components/(home)/project/template/list/ProjectDetailInfoCard";
@@ -6,6 +6,28 @@ import ProjectDetailInfoCard from "../../../../components/(home)/project/templat
 export default function ProjectDetailPage() {
   const { title } = useParams();
   const navigate = useNavigate();
+
+    const images = [
+    "/images/kwvizer1.png",
+    "/images/kwvizer2.png",
+    "/images/kwvizer3.png",
+    "/images/kwvizer4.png",
+  ];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const goNext = () => {
+        setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+    };
+
+    const goPrev = () => {
+        setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        );
+    };
+
   return (
     <div className="min-h-screen bg-black text-white px-6 md:px-24">
          <button onClick={()=>navigate(`/projects`)} className="ml-[70px] mt-[78px] text-4xl w-[20px] z-0 cursor-pointer">
@@ -16,15 +38,15 @@ export default function ProjectDetailPage() {
         <div className="mt-[-50px] flex flex-col items-center">
             <div>
                 <div className="relative w-full flex flex-row items-center">
-                    <button className="mr-[100px] text-gray-300 text-4xl z-10 cursor-pointer">
+                    <button className="mr-[100px] text-gray-300 text-4xl z-10 cursor-pointer" onClick={goPrev}>
                         ❮
                     </button>
                     <img
-                        src="/images/kwvizer.png"
+                        src={images[currentIndex]} 
                         alt="Project"
                         className="w-[768px] h-[432px] object-cover rounded-[24px]"
                     />
-                    <button className="ml-[100px] text-gray-300 text-4xl z-10 cursor-pointer">
+                    <button className="ml-[100px] text-gray-300 text-4xl z-10 cursor-pointer" onClick={goNext}>
                         ❯
                     </button>
                 </div>
