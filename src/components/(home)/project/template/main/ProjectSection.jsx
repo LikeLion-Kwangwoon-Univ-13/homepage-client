@@ -56,24 +56,24 @@ export default function ProjectSection() {
     };
 
     const handleNext = () => {
-        if (startIndex < 2) setStartIndex(startIndex + 1);
+        if (startIndex < 4) setStartIndex(startIndex + 1);
     };
 
     return (
-        <section className="flex flex-row relative z-10 mt-[140px] px-6 md:pl-24">
+        <section className="flex flex-row relative z-10 mt-[140px] pl-6 md:pl-24">
             <div className="mr-[139px]">
                 <h2 style={{fontFamily:'Space Grotesk', fontSize: 48}} className="text-white text-3xl font-bold mb-8 mt-[50px]">Works</h2>
 
                 <div className="flex items-center gap-3">
-                    <button onClick={handlePrev} className="w-[96px] h-[96px] rounded-full border border-white text-white text-5xl flex items-center justify-center">
+                    <button onClick={handlePrev} className="w-[96px] h-[96px] rounded-full border border-white text-white text-5xl flex items-center justify-center cursor-pointer">
                         ←
                     </button>
-                    <button onClick={handleNext} className="w-[96px] h-[96px] rounded-full border border-white text-5xl bg-white text-black flex items-center justify-center">
+                    <button onClick={handleNext} className="w-[96px] h-[96px] rounded-full border border-white text-5xl bg-white text-black flex items-center justify-center cursor-pointer">
                         →
                     </button>
                 </div>
 
-                <button onClick={() => navigate("/projects/projectlist")} style={{fontFamily: 'Space Grotesk', fontSize: 20}} className="w-[217px] h-[71px] mt-[32px] px-4 py-2 bg-black text-white border border-white rounded-[16px]">
+                <button onClick={() => navigate("/projects/projectlist")} style={{fontFamily: 'Space Grotesk', fontSize: 20}} className="w-[217px] h-[71px] mt-[32px] px-4 py-2 bg-black text-white border border-white rounded-[16px] cursor-pointer">
                     More project?
                 </button>
             </div>

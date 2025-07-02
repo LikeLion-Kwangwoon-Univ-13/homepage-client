@@ -9,7 +9,7 @@ export default function ProjectListPage() {
   return (
     <div className="mb-10 flex flex-col justify-center items-center mt-[88px]">
       <div className="flex flex-row items-center self-start ml-[100px]">
-        <button onClick={()=>navigate(`/projects`)} className="text-4xl text-white w-[20px] z-0">
+        <button onClick={()=>navigate(`/projects`)} className="text-4xl text-white w-[20px] z-0 cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none"
             viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
             className="w-11 h-24">
@@ -21,7 +21,7 @@ export default function ProjectListPage() {
       </div>
 
       <div className="w-[85%] mt-[51px] flex justify-center">
-          <Input state={[query, setQuery]} placeholder="멋쟁이 사자 처럼의 다양한 프로젝트를 검색해보세요!"/>
+          <Input state={[query, setQuery]} placeholder="멋쟁이 사자 처럼의 다양한 프로젝트를 검색해보세요!"option={{cursor: 'pointer'}}/>
       </div>
     </div>
   );
