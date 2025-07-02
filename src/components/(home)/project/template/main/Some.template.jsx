@@ -46,7 +46,6 @@ const ProjectMain = () => {
 
         <ProjectSection/>
       </div>
-
       <ProjectFooter/>
     </>
   );
