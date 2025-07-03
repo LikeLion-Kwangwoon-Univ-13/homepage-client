@@ -1,14 +1,22 @@
 import { FaGithub, FaInstagram } from "react-icons/fa";
 
-export default function TeamCard({ name, role, part, stack = [], github, instagram }) {
+export default function TeamCard({
+  name,
+  role,
+  stack = [],
+  github,
+  instagram,
+  profile
+}) {
   return (
     <div className="w-[263px] h-[390px] rounded-[15px] border border-white flex flex-col items-center justify-between py-6 px-4 text-white">
+      
       {/* 프로필 이미지 */}
       <div className="w-[161px] h-[161px] rounded-full border border-white overflow-hidden flex items-center justify-center mt-4">
         <img
-            className="w-full h-full object-cover object-center"
-            src="/images/profile.png"
-            alt={`${name} 프로필`}
+          className="w-full h-full object-cover object-center"
+          src={profile || "/images/profile.png"}
+          alt={`${name} 프로필`}
         />
       </div>
 
@@ -31,7 +39,7 @@ export default function TeamCard({ name, role, part, stack = [], github, instagr
       </div>
 
       {/* SNS 아이콘 */}
-      <div className="flex gap-6 mt-1.6">
+      <div className="flex gap-6 mt-1.5">
         {github && (
           <a href={github} target="_blank" rel="noopener noreferrer">
             <FaGithub className="text-white text-[20px]" />
