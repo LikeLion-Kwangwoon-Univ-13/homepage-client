@@ -9,8 +9,7 @@ export default function SectionB() {
 		text: 'text-white',
 		displays: 'flex flex-col items-center justify-center',
 		gap: 'gap-24',
-		padding: 'px-20',
-		styles: 'overflow-hidden'
+		styles: 'overflow-hidden',
 	}
 
 
@@ -81,22 +80,21 @@ export default function SectionB() {
 
 
 	const about = {
-		positions: 'absolute top-1/4 -translate-y-1/2',
-		left: init ? 'left-[22%] -translate-x-1/2 duration-1200' : '-left-180 duration-100',
-		text: 'text-[220px]',
+		positions: 'absolute top-0',
+		left: init ? 'left-[3%] duration-1200' : '-left-180 duration-100',
+		text: "text-[64px] sm:text-[100px] md:text-[220px] xl:text-[280px] 2xl:text-[280px]  leading-none",
 		transition: 'transition-all  ease-linear',
 	}
 	const likeLion = {
-		positions: 'absolute -bottom-[12%] -translate-y-1/2',
+		positions: 'absolute bottom-[100px]',
 		left: init ? 'right-[3%] duration-1200' : '-right-222 duration-100',
-		text: 'text-[220px]',
-		transition: 'transition-all  ease-linear',
+		text: "text-[64px] sm:text-[100px] md:text-[220px] xl:text-[240px] 2xl:text-[280px] leading-none",
 	}
 	const viewMore = {
 		positions: 'absolute right-1/2 translate-x-1/2',
 		top: init ? 'bottom-0 -translate-y-1/2 duration-1200' : '-bottom-100 duration-100',
-		size: 'w-[264px] h-[70px]',
-		boundaries: 'rounded-full border-2',
+		size: 'w-[264px] h-[70px] border-2',
+		boundaries: 'rounded-full ',
 		fonts: 'text-[36px] leading-none',
 		transition: 'transition-all ',
 	}
