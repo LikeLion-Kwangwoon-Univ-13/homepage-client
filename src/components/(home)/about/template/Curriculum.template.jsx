@@ -64,10 +64,6 @@ const Curriculum = () => {
 			className="relative flex items-start ml-[96px] mr-[176px] min-h-[180px] pt-[30px] pb-[30px]"
 			>
 			<div className="relative flex flex-col items-center mr-6">
-				{index !== current.length -1 && (
-				<div className="mt-[20px] absolute top-[50px] h-[calc(100%+100px)] w-px bg-white"></div>
-				)}
-
 				<div
 				className={`w-[47.44px] h-[47.44px] rounded-full text-[24px] font-bold flex items-center justify-center transition-all duration-300 z-10 ${
 					activeIndex === index

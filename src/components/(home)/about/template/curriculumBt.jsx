@@ -12,7 +12,7 @@ const CurriculumBt = ({ selected, onSelect }) => {
         <button
           key={tab.id}
           onClick={() => onSelect(tab.id)}
-          style={{fontFamily: 'Space Grotesk', fontSize: 30, width: "225.5px", height: "73.8px", borderRadius: "30px"}}
+          style={{fontFamily: 'Space Grotesk', fontSize: 30, width: "225.5px", height: "73.8px", borderRadius: "30px", cursor: "pointer"}}
           className={`font-space text-curriculum-title font-bold rounded-full text-lg transition-all duration-200 ${
             selected === tab.id
               ? "bg-white text-black font-bold"

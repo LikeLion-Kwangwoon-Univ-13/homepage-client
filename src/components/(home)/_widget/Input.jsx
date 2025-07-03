@@ -61,7 +61,7 @@ export default function Input({ state, placeholder, onKeyDown, option }) {
 }
 
 function SearchIcon() {
-	return <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+	return <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none" cursor="pointer">
 		<circle cx="8.79099" cy="8.56101" r="7.31101" stroke="#D9D9D9" strokeWidth="1.5" />
 		<path d="M14.4546 13.5664L19.939 19.0503" stroke="#D9D9D9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
 	</svg>

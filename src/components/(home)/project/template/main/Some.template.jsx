@@ -34,16 +34,18 @@ const ProjectMain = () => {
           }
         }
       `}</style>
-
-      <div style={containerStyle}>
-        <div style={textStyle}>
-          OUR PROJECTS - EXPLORE<span style={{ display: "inline-block", width: "200px" }}></span>OUR PROJECTS - EXPLORE
+      
+      <div className="flex-1">
+        <div style={containerStyle}>
+          <div style={textStyle}>
+            OUR PROJECTS - EXPLORE<span style={{ display: "inline-block", width: "200px" }}></span>OUR PROJECTS - EXPLORE
+          </div>
         </div>
+
+        <img src="/images/project-bg.png" className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[100vw] h-[467px] z-[-1/2] pointer-events-none select-none" />
+
+        <ProjectSection/>
       </div>
-
-      <img src="/images/project-bg.png" className="absolute top-[613px] left-1/2 -translate-x-1/2 w-[100vw] h-[467px] z-0 pointer-events-none select-none" />
-
-      <ProjectSection/>
 
       <ProjectFooter/>
     </>

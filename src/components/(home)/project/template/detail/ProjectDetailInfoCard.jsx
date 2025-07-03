@@ -31,8 +31,8 @@ export default function ProjectDetailInfoCard() {
             </div>
         </div>
       <div className="flex gap-4 mt-4">
-        <img src="/images/insta.png" alt="instagram" className="w-6 h-6" />
-        <img src="/images/git.png" alt="github" className="w-6 h-6" />
+        <img src="/images/insta_svg.svg" alt="instagram" className="w-6 h-6" />
+        <img src="/images/git_svg.svg" alt="github" className="w-6 h-6" />
       </div>
     </div>
   );
