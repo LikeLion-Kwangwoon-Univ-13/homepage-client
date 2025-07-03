@@ -45,7 +45,12 @@ export default function TimelineSection() {
             className="flex flex-col items-center justify-start gap-[6px]"
           >
             <div
-              className={`w-[12px] h-[12px] rounded-full ${item.color}`}
+              className={
+                `relative w-[12px] h-[12px] rounded-full z-10 ${item.color} ` +
+                (item.color === "bg-white"
+                  ? "shadow-[0_0_10px_4px_white]"
+                  : "shadow-[0_0_10px_4px_#E74F13]")
+              }
               style={{ marginTop: "-10px" }}
             />
             <div className="text-[14px] mt-[49px] text-white font-space text-center">
