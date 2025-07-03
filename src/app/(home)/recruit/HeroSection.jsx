@@ -47,7 +47,8 @@ export default function HeroSection() {
     "text-[16px]",
     "font-medium",
     "flex items-center justify-center",
-    "pointer-events-none"
+    "pointer-events-none",
+    "backdrop-blur-sm" //겹치는 부분 안깨지게
   );
 
   const applyBtn = {
@@ -60,7 +61,7 @@ export default function HeroSection() {
       <img
         src="/images/Ellipse30.png"
         alt="배경 원"
-        className="absolute w-[400px] h-[716px] pointer-events-none select-none"
+        className="absolute w-[350px] h-[700px] pointer-events-none select-none"
         style={{
           top: "200px",
           right: "0px",

@@ -6,6 +6,7 @@ import TimelineSection from "./TimelineSection";
 export default function RecruitPage() {
   return (
     <div
+      className="w-full overflow-x-hidden"
       style={{
         backgroundImage: "url('/images/background.png')",
         backgroundColor: "#1A1A1A"
@@ -17,7 +18,7 @@ export default function RecruitPage() {
       <TimelineSection />
 
       <footer
-        className="w-full h-[79px] bg-cover bg-center bg-no-repeat text-white text-[20px] font-space mt-[80px]"
+        className="w-full h-[79px] bg-cover bg-center bg-no-repeat text-white text-[20px] font-space mt-[310px]"
         style={{
           backgroundImage: "url('/images/background.png')",
           backgroundColor: "#1A1A1A"
