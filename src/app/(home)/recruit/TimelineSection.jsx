@@ -1,5 +1,3 @@
-//footer 양쪽 끝 더 길게하기
-//타임라인 위에 점이 있지 않음
 import { cn } from "@/utils";
 
 export default function TimelineSection() {
@@ -23,7 +21,7 @@ export default function TimelineSection() {
   const itemLabel = cn("text-[18px] text-white font-bold whitespace-nowrap font-space");
 
   const footer = cn(
-    "w-[1928px] h-[79px] absolute -bottom-[78px] flex justify-between items-center text-white text-[20px] font-space"
+    "w-full h-[79px] flex justify-between items-center text-white text-[20px] font-space"
   );
 
   return (
@@ -48,27 +46,6 @@ export default function TimelineSection() {
             <div className={itemLabel}>{item.label}</div>
           </div>
         ))}
-      </div>
-
-      <div className={footer}>
-        <footer
-          className="w-full bg-cover bg-center bg-no-repeat text-white text-[20px] font-space"
-          style={{
-            backgroundImage: "url('/images/background.png')",
-            backgroundColor: "#1A1A1A"
-          }}
-        >
-          <div className="max-w-[1728px] h-[79px] mx-auto px-[64px] flex justify-between items-center">
-            <div>광운대 멋쟁이사자처럼</div>
-            <div className="text-center">© 2025 LIKELION KWUNIV</div>
-            <div className="flex gap-[12px] items-center">
-              <div>Contact us!</div>
-              <img src="/images/EmailIcon.png" alt="mail" className="w-[16px]" />
-              <img src="/images/insta.png" alt="instagram" className="w-[16px]" />
-              <img src="/images/git.png" alt="github" className="w-[16px]" />
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
   );

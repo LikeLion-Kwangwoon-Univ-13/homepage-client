@@ -93,13 +93,17 @@ export default function HeroSection() {
         alt="지원하기 버튼"
         className={applyBtn.base}
         style={{
-          top: "791px",
-          left: "1357px",
+          position: "fixed",          
+          bottom: "40px",               
+          right: "90px",     
           width: "282.71px",
           height: "70.78px",
-          position: "absolute"
+          zIndex: 50, 
         }}
-        onClick={() => router("/recruit")}
+        onClick={() => {
+          //외부 폼 이동
+          window.open("https://example.com/apply", "_blank");
+        }}
       />
     </div>
   );
