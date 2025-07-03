@@ -5,7 +5,7 @@ export default function TargetSection() {
     "w-[1203px]", 
     "h-[536px]",
     "mx-auto",
-    "mt-[-530px]", //모집파트, 모집대상 사이거리
+    "mt-[-300px]", //모집파트, 모집대상 사이거리
     "pt-[200px]",
     "flex",
     "flex-col",

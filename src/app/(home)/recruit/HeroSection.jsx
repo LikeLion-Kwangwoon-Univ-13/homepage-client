@@ -47,7 +47,8 @@ export default function HeroSection() {
     "text-[16px]",
     "font-medium",
     "flex items-center justify-center",
-    "pointer-events-none"
+    "pointer-events-none",
+    "backdrop-blur-sm" //겹치는 부분 안깨지게
   );
 
   const applyBtn = {
@@ -60,7 +61,7 @@ export default function HeroSection() {
       <img
         src="/images/Ellipse30.png"
         alt="배경 원"
-        className="absolute w-[400px] h-[716px] pointer-events-none select-none"
+        className="absolute w-[350px] h-[700px] pointer-events-none select-none"
         style={{
           top: "200px",
           right: "0px",
@@ -93,13 +94,17 @@ export default function HeroSection() {
         alt="지원하기 버튼"
         className={applyBtn.base}
         style={{
-          top: "791px",
-          left: "1357px",
+          position: "fixed",          
+          bottom: "40px",               
+          right: "90px",     
           width: "282.71px",
           height: "70.78px",
-          position: "absolute"
+          zIndex: 50, 
         }}
-        onClick={() => router("/recruit")}
+        onClick={() => {
+          //외부 폼 이동
+          window.open("https://example.com/apply", "_blank");
+        }}
       />
     </div>
   );

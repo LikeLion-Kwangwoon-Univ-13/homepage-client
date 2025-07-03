@@ -55,7 +55,7 @@ export default function PartSection() {
         className="absolute top-[-300px] w-[2000px] h-[900px] pointer-events-none select-none z-10"
       />
 
-      <div className={cn(container, "mt-[201px]")}>
+      <div className={cn(container, "mt-[300px]")}>
         <div className={title}>모집 파트</div>
 
         <div className={cardWrap}>
