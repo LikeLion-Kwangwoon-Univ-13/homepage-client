@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import http from "../../../../service/api/axios";
 
 export default function BlogDetailPage() {
   const { id } = useParams();
@@ -8,7 +8,7 @@ export default function BlogDetailPage() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["blog-detail", id],
     queryFn: async () => {
-      const res = await axios.get("/api/blog");
+      const res = await http.get("/api/blog");
       return res.data.posts.find((post) => String(post.id) === id);
     }
   });

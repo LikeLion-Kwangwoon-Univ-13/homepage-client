@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import BlogHighlightCard from "../FeaturedBlogCard";
 import PostPreviewCard from "../PostPreviewCard";
 import { useNavigate } from "react-router-dom";
 import Input from "../../../../components/(home)/_widget/Input";
 import { useState } from "react";
+import http from "../../../../service/api/axios";
 
 export default function BlogHighlightSection() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function BlogHighlightSection() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["blogs"],
     queryFn: async () => {
-      const res = await axios.get("/api/blog");
+      const res = await http.get("/api/blog");
       return res.data;
     }
   });
@@ -29,7 +29,7 @@ export default function BlogHighlightSection() {
   return (
     <section className="px-6 py-12 max-w-[1600px] mx-auto text-white">
       {/* 검색창 */}
-      <div style={{ marginTop: "150px", marginBottom: "110px"}}>
+      <div style={{ marginTop: "150px", marginBottom: "110px" }}>
         <div className="mb-6 w-full flex justify-center">
           <div className="w-[1450px]">
             <Input state={[query, setQuery]} placeholder="멋쟁이 사자처럼의 다양한 프로젝트를 검색해보세요!" />
