@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams,useNavigate } from "react-router-dom";
-import ProjectSummarySection from "../../../../components/(home)/project/template/list/ProjectSummarySection";
-import ProjectDetailInfoCard from "../../../../components/(home)/project/template/list/ProjectDetailInfoCard";
+import ProjectSummarySection from "../../../../components/(home)/project/template/detail/ProjectSummarySection";
+import ProjectDetailInfoCard from "../../../../components/(home)/project/template/detail/ProjectDetailInfoCard";
 
 export default function ProjectDetailPage() {
   const { title } = useParams();

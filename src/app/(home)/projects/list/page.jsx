@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../../../components/(home)/_widget/Input";
+import ProjectListSection from "../../../../components/(home)/project/template/list/ProjectListSection";
+import ProjectFooter from "../../../../components/(home)/project/template/main/ProjectFooter";
 
 export default function ProjectListPage() {
   const navigate = useNavigate();
@@ -23,6 +25,10 @@ export default function ProjectListPage() {
       <div className="w-[85%] mt-[51px] flex justify-center">
           <Input state={[query, setQuery]} placeholder="멋쟁이 사자 처럼의 다양한 프로젝트를 검색해보세요!"option={{cursor: 'pointer'}}/>
       </div>
+
+      <ProjectListSection/>
+
+      <ProjectFooter/>
     </div>
   );
 }
