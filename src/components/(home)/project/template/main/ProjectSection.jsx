@@ -34,12 +34,6 @@ const dummyProjects = [
     description: "학사정보 기반 AI 진로 상담 챗봇",
     image: "/images/kwvizer.png",
   },
-  {
-    id: 6,
-    title: "KW-VIZER",
-    description: "학사정보 기반 AI 진로 상담 챗봇",
-    image: "/images/kwvizer.png",
-  },
 ];
 
 export default function ProjectSection() {
