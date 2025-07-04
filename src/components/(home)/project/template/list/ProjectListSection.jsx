@@ -22,27 +22,30 @@ const ProjectListSection = () => {
     return matchGen && matchAct;
   })
   return (
-    <div>
+    <div className="mb-10">
         <div className="flex gap-[12px] mt-[80px] mb-[31px]">
             <ListDropdown label="기수" options={["12기", "13기"]} onSelect={handleGenChange} />
             <ListDropdown label="활동" options={["해커톤", "아이디어톤", "개인 활동"]} onSelect={handleActChange} />
         </div>
 
-        <div className="grid grid-cols   
-            [@media(min-width:640px)]:grid-cols-2
-            [@media(min-width:768px)]:grid-cols-3
-            [@media(min-width:1024px)]:grid-cols-4
-            [@media(min-width:1280px)]:grid-cols-5 gap-[32px] overflow-hidden">
-        {filteredProjects.map((project, idx) => (
-            <ProjectListCard
-            key={idx}
-            title={project.title}
-            type={project.type}
-            description={project.description}
-            image={project.image}
-            />
-        ))}
-        </div>
+<div className="w-full">
+  <div
+    className="grid gap-[32px]"
+    style={{
+      gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
+    }}
+  >
+    {filteredProjects.map((project, idx) => (
+      <ProjectListCard
+        key={idx}
+        title={project.title}
+        type={project.type}
+        description={project.description}
+        image={project.image}
+      />
+    ))}
+  </div>
+</div>
     </div>
 
   );

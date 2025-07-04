@@ -23,7 +23,7 @@ const ListDropdown = ({ label, options, onSelect }) => {
   };
 
   return (
-    <div ref={dropdownRef} className="relative w-[171px]">
+    <div ref={dropdownRef} className="relative min-w-[171px] w-fit whitespace-nowrap">
         <button
             onClick={() => setOpen(!open)}
             style={{fontFamily: 'Space-Grotesk', fontSize: '24px'}}
@@ -31,7 +31,7 @@ const ListDropdown = ({ label, options, onSelect }) => {
         >
             {selected}
             <img src="https://www.svgrepo.com/show/80156/down-arrow.svg" alt="arrow"
-                className="w-[21px] h-[10px] ml-2 invert"
+                className="w-[21px] h-[10px] ml-[10px] invert"
             />
         </button>
 
