@@ -3,11 +3,6 @@ const backend = [
     number: "01",
     title: "Git & GitHub을 활용한 협업과 버전 관리",
     description: `Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
-    또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
-    또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
-    또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
-    또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
-    또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
     또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.`,
   },
   {
