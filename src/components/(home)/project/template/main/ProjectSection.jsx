@@ -1,40 +1,40 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectMainCard from "./ProjectMainCard";
+import ListDummyProjects from "../Projectdummy";
 
-
-const dummyProjects = [
-  {
-    id: 1,
-    title: "KW-VIZER",
-    description: "학사정보 기반 AI 진로 상담 챗봇",
-    image: "/images/kwvizer.png",
-  },
-  {
-    id: 2,
-    title: "KW-VIZER",
-    description: "학사정보 기반 AI 진로 상담 챗봇",
-    image: "/images/kwvizer.png",
-  },
-  {
-    id: 3,
-    title: "KW-VIZER",
-    description: "학사정보 기반 AI 진로 상담 챗봇",
-    image: "/images/kwvizer.png",
-  },
-  {
-    id: 4,
-    title: "KW-VIZER",
-    description: "학사정보 기반 AI 진로 상담 챗봇",
-    image: "/images/kwvizer.png",
-  },
-  {
-    id: 5,
-    title: "KW-VIZER",
-    description: "학사정보 기반 AI 진로 상담 챗봇",
-    image: "/images/kwvizer.png",
-  },
-];
+// const dummyProjects = [
+//   {
+//     id: 1,
+//     title: "KW-VIZER",
+//     description: "학사정보 기반 AI 진로 상담 챗봇",
+//     image: "/images/kwvizer.png",
+//   },
+//   {
+//     id: 2,
+//     title: "KW-VIZER",
+//     description: "학사정보 기반 AI 진로 상담 챗봇",
+//     image: "/images/kwvizer.png",
+//   },
+//   {
+//     id: 3,
+//     title: "KW-VIZER",
+//     description: "학사정보 기반 AI 진로 상담 챗봇",
+//     image: "/images/kwvizer.png",
+//   },
+//   {
+//     id: 4,
+//     title: "KW-VIZER",
+//     description: "학사정보 기반 AI 진로 상담 챗봇",
+//     image: "/images/kwvizer.png",
+//   },
+//   {
+//     id: 5,
+//     title: "KW-VIZER",
+//     description: "학사정보 기반 AI 진로 상담 챗봇",
+//     image: "/images/kwvizer.png",
+//   },
+// ];
 
 export default function ProjectSection() {
     const [startIndex, setStartIndex] = useState(0);
@@ -80,7 +80,8 @@ export default function ProjectSection() {
                     transform: `translateX(-${startIndex * (CARD_WIDTH + GAP)}px)`,
                 }}
                 >
-                {dummyProjects.map((project) => (
+                {ListDummyProjects.filter(project => project.id >= 1 && project.id <= 5)
+                .map((project) => (
                     <ProjectMainCard key={project.id} project={project} />
                 ))}
                 </div>

@@ -11,7 +11,7 @@ export default function ProjectMainCard({ project }) {
       className="group flex-shrink-0 w-[545px] h-[365px] bg-[#1A1A1A] text-white p-4 rounded-[32px] border border-[1px] cursor-pointer hover:shadow-xl transition mr-[48px]"
     >
       <img
-        src="/images/project-img.png"
+        src={project.thumbnail}
         alt={project.title}
         className="rounded-full w-[185px] h-[185px] mt-[20px] ml-[50px]"
       />

@@ -3,31 +3,28 @@ import { useParams,useNavigate } from "react-router-dom";
 import ProjectSummarySection from "../../../../components/(home)/project/template/detail/ProjectSummarySection";
 import ProjectDetailInfoCard from "../../../../components/(home)/project/template/detail/ProjectDetailInfoCard";
 import ProjectFooter from "../../../../components/(home)/project/template/main/ProjectFooter";
+import ListDummyProjects from "../../../../components/(home)/project/template/Projectdummy";
 
 export default function ProjectDetailPage() {
   const { title } = useParams();
   const navigate = useNavigate();
 
-    const images = [
-    "/images/kwvizer1.png",
-    "/images/kwvizer2.png",
-    "/images/kwvizer3.png",
-    "/images/kwvizer4.png",
-  ];
+  const project = ListDummyProjects.find(p=> p.title === decodeURIComponent(title));
+  const images = project?.images || [];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    const goNext = () => {
-        setCurrentIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-        );
-    };
+  const goNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+  };
 
-    const goPrev = () => {
-        setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
-        );
-    };
+  const goPrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white px-6 md:px-24">
@@ -55,7 +52,7 @@ export default function ProjectDetailPage() {
             </div>
 
             <div className="mt-[40px] flex flex-row">
-                <ProjectDetailInfoCard />
+                <ProjectDetailInfoCard project={project}/>
                 <ProjectSummarySection title={title} />
             </div>
         </div>
