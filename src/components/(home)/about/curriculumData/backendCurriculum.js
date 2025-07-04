@@ -3,14 +3,18 @@ const backend = [
     number: "01",
     title: "Git & GitHub을 활용한 협업과 버전 관리",
     description: `Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
+    또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
+    또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
+    또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
+    또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
+    또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.Git의 기본 개념을 이해하고, .gitignore 설정과 커밋, 푸시 과정을 실습하며 협업에 필요한 버전 관리 능력을 기릅니다.
     또한, Spring Boot 프로젝트를 생성하고 build.gradle을 이용한 의존성 설정을 통해 프로젝트의 초기 구성을 익힙니다.`,
   },
   {
     number: "02",
     title: "HTTP와 웹 API의 개념 및 구현",
     description: `서버와 클라이언트 간의 통신 구조를 이해하고, HTTP 요청/응답 구조와 메서드, 상태 코드의 의미를 학습합니다. 
-    Controller에 각 HTTP 메서드를 연결해 API를 구현하고, Postman을 활용해 테스트하며 RESTful API 설계와 검증 과정을 
-    실습합니다.`,
+    Controller에 각 HTTP 메서드를 연결해 API를 구현하고, Postman을 활용해 테스트하며 RESTful API 설계와 검증 과정을 실습합니다.`,
   },
   {
     number: "03",
@@ -34,8 +38,7 @@ const backend = [
     number: "06",
     title: "GitHub Actions를 활용한 자동 배포 (CI/CD)",
     description: `GitHub Actions를 통해 코드 푸시만으로 S3 업로드부터 EC2 배포까지 자동으로 이루어지는 배포 파이프라인을 구축합니다. 
-    deploy.yml, appspec,yml, deploy.sh 파일을 연동하고, GitHub Secrets, IAM 권한, CodeDeploy 설정을 통해 안정적인 
-    자동 배포 환경을 구현합니다. `,
+    deploy.yml, appspec,yml, deploy.sh 파일을 연동하고, GitHub Secrets, IAM 권한, CodeDeploy 설정을 통해 안정적인 자동 배포 환경을 구현합니다. `,
   },
 ];
 

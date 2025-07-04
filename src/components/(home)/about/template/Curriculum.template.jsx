@@ -63,24 +63,28 @@ const Curriculum = () => {
 			ref={(el) => (sectionRefs.current[index] = el)}
 			className="relative flex items-start ml-[96px] mr-[176px] min-h-[180px] pt-[30px] pb-[30px]"
 			>
-			<div className="relative flex flex-col items-center mr-6">
-				<div
-				className={`w-[47.44px] h-[47.44px] rounded-full text-[24px] font-bold flex items-center justify-center transition-all duration-300 z-10 ${
-					activeIndex === index
-					? "bg-white text-[#E74F13] shadow-[0px_4px_30px_rgba(231,79,19,1)]"
-					: "bg-[#1A1A1A] text-white border-2 border-white"
-				}`}
-				>
-				{item.number}
-				</div>
-			</div>
+				<div className="flex flex-col items-center mr-6">
+					{index !== current.length -1 && (
+					<div className="mt-[50px] absolute top-[50px] bottom-0 h-[calc(100%-50px)] min-h-[150px] w-[1px] bg-white"></div>
+					)}
 
-			<div>
-				<h4 style={{fontFamily: 'Space Grotesk', fontSize: 30}} className="font-space text-curriculum-title font-bold mb-2">{item.title}</h4>
-				<p style={{fontFamily: 'Space Grotesk', fontSize: 24}}className="font-space text-curriculum-desc font-medium text-gray-300 md:text-base leading-relaxed whitespace-pre-line">
-				{item.description}
-				</p>
-			</div>
+					<div
+					className={`w-[47.44px] h-[47.44px] rounded-full text-[24px] font-bold flex items-center justify-center transition-all duration-300 z-10 ${
+						activeIndex === index
+						? "bg-white text-[#E74F13] shadow-[0px_4px_30px_rgba(231,79,19,1)]"
+						: "bg-[#1A1A1A] text-white border-2 border-white"
+					}`}
+					>
+					{item.number}
+					</div>
+				</div>
+
+				<div className="flex-1">
+					<h4 style={{fontFamily: 'Space Grotesk', fontSize: 30}} className="font-bold mb-2">{item.title}</h4>
+					<p style={{fontFamily: 'Space Grotesk', fontSize: 24}}className="font-medium text-gray-300 md:text-base leading-relaxed whitespace-pre-line">
+					{item.description}
+					</p>
+				</div>
 			</li>
 			))}
 		</ul>
