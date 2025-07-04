@@ -26,7 +26,7 @@ export default function ProjectListPage() {
       <div className="flex-1 flex flex-col items-center">
         <div className="w-[85%] mt-[51px] flex flex-col">
           <Input state={[query, setQuery]} placeholder="멋쟁이 사자 처럼의 다양한 프로젝트를 검색해보세요!" option={{ cursor: "pointer" }} />
-          <ProjectListSection />
+          <ProjectListSection query={query} />
         </div>
       </div>
       <ProjectFooter/>

@@ -3,7 +3,7 @@ import ProjectListCard from "./ProjectListCard";
 import ListDummyProjects from "../Projectdummy";
 import ListDropdown from "./ListDropdown";
 
-const ProjectListSection = () => {
+const ProjectListSection = ({query}) => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,9 @@ const ProjectListSection = () => {
   const filteredProjects = ListDummyProjects.filter((projects) => {
     const matchGen = selectedGen === "전체" || projects.generation === selectedGen;
     const matchAct = selectedAct === "전체" || projects.activity === selectedAct;
-    return matchGen && matchAct;
+    const matchQuery = query.trim() === "" || projects.title.toLowerCase().includes(query.toLowerCase());
+
+    return matchGen && matchAct && matchQuery;
   })
 
   const isSmallCount = filteredProjects.length <= 2;
