@@ -4,7 +4,7 @@ const ListDummyProjects = [
     title: "KW-VIZER",
     type: "APP",
     description: "학사정보 기반 AI 진로 상담 챗봇",
-    thumbnail: "/public/images/project-img.png",
+    thumbnail: "images/project-img.png",
     image: "/images/kwvizer.png",
     images: [
     "/images/kwvizer1.png",
@@ -30,7 +30,7 @@ const ListDummyProjects = [
     title: "알콩달콩",
     type: "WEB",
     description: "프로젝트부연설명한줄소개프로젝트부연설명한줄소개",
-    thumbnail: "/public/images/project-img2.png",
+    thumbnail: "images/project-img2.png",
     image: "/images/kwlogo.png",
     images: [
     "/images/kwlogo.png",
@@ -55,7 +55,7 @@ const ListDummyProjects = [
     title: "KW-VIZER",
     type: "APP",
     description: "학사정보 기반 AI 진로 상담 챗봇",
-    thumbnail: "/public/images/project-img.png",
+    thumbnail: "images/project-img.png",
     image: "/images/kwvizer.png",
     images: [
     "/images/kwvizer1.png",
@@ -80,7 +80,7 @@ const ListDummyProjects = [
     title: "알콩달콩",
     type: "WEB",
     description: "프로젝트부연설명한줄소개",
-    thumbnail: "/public/images/project-img2.png",
+    thumbnail: "images/project-img2.png",
     image: "/images/kwlogo.png",
     images: [
     "/images/kwlogo.png",
@@ -104,7 +104,7 @@ const ListDummyProjects = [
     title: "KW-VIZER",
     type: "APP",
     description: "학사정보 기반 AI 진로 상담 챗봇",
-    thumbnail: "/public/images/project-img.png",
+    thumbnail: "images/project-img.png",
     image: "/images/kwvizer.png",
     images: [
     "/images/kwvizer1.png",
@@ -128,7 +128,7 @@ const ListDummyProjects = [
     title: "알콩달콩",
     type: "WEB",
     description: "프로젝트부연설명한줄소개",
-    thumbnail: "/public/images/project-img2.png",
+    thumbnail: "images/project-img2.png",
     image: "/images/kwlogo.png",
     images: [
     "/images/kwlogo.png",
