@@ -7,7 +7,7 @@ export default function ProjectMainCard({ project }) {
 
   return (
     <div
-      onClick={() => navigate(`/projects/projectpage/${encodeURIComponent(project.title)}`)}
+      onClick={() => navigate(`/projects/projectpage/${encodeURIComponent(project.title)}`, {state: { from: "main" }, })}
       className="group flex-shrink-0 w-[545px] h-[365px] bg-[#1A1A1A] text-white p-4 rounded-[32px] border border-[1px] cursor-pointer hover:shadow-xl transition mr-[48px]"
     >
       <img

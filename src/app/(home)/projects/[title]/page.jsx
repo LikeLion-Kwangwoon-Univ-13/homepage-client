@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams,useNavigate, useLocation } from "react-router-dom";
 import ProjectSummarySection from "../../../../components/(home)/project/template/detail/ProjectSummarySection";
 import ProjectDetailInfoCard from "../../../../components/(home)/project/template/detail/ProjectDetailInfoCard";
 import ProjectFooter from "../../../../components/(home)/project/template/main/ProjectFooter";
@@ -8,6 +8,7 @@ import ListDummyProjects from "../../../../components/(home)/project/template/Pr
 export default function ProjectDetailPage() {
   const { title } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const project = ListDummyProjects.find(p=> p.title === decodeURIComponent(title));
   const images = project?.images || [];
@@ -26,9 +27,11 @@ export default function ProjectDetailPage() {
       );
   };
 
+  const backPath = location.state?.from === "main" ? "/projects" : "/projects/projectlist";
+
   return (
     <div className="min-h-screen flex flex-col bg-black text-white px-6 md:px-24">
-         <button onClick={()=>navigate(`/projects`)} className="ml-[70px] mt-[78px] text-4xl w-[20px] z-0 cursor-pointer">
+         <button onClick={()=>navigate(backPath)} className="ml-[70px] mt-[78px] text-4xl w-[20px] z-0 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-11 h-24">
             <path strokeLinecap="round" strokeLinejoin="round"d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>

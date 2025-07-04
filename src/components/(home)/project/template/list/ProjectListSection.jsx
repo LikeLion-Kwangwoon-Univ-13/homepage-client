@@ -21,6 +21,8 @@ const ProjectListSection = () => {
     const matchAct = selectedAct === "전체" || projects.activity === selectedAct;
     return matchGen && matchAct;
   })
+
+  const isSmallCount = filteredProjects.length <= 2;
   return (
     <div className="mb-10">
         <div className="flex gap-[12px] mt-[80px] mb-[31px]">
@@ -30,7 +32,11 @@ const ProjectListSection = () => {
 
 <div className="w-full">
   <div
-    className="grid gap-[32px]"
+        className={`${
+          isSmallCount
+            ? "flex flex-row flex-wrap gap-[32px]"
+            : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-[32px]"
+        }`}
     style={{
       gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
     }}
@@ -42,6 +48,7 @@ const ProjectListSection = () => {
         type={project.type}
         description={project.description}
         image={project.image}
+        isFixedSize={isSmallCount}
       />
     ))}
   </div>

@@ -21,7 +21,9 @@ const ListDummyProjects = [
       { role: "frontend", name: "유승연" },
     ],
     stack: "React Django",
-    term: "2024-09-01 ~ 2025-06-30"
+    term: "2024-09-01 ~ 2025-06-30",
+    generation: "12기",
+    activity: "해커톤"
   },
   {
     id: 2,
@@ -45,7 +47,8 @@ const ListDummyProjects = [
       { role: "frontend", name: "유승연" },
     ],
     stack: "React Django",
-    term: "2024-09-01 ~ 2025-06-30"
+    term: "2024-09-01 ~ 2025-06-30",
+    generation: "12기"
   },
   {
     id: 3,
@@ -69,7 +72,8 @@ const ListDummyProjects = [
       { role: "frontend", name: "유승연" },
     ],
     stack: "React Django",
-    term: "2024-09-01 ~ 2025-06-30"
+    term: "2024-09-01 ~ 2025-06-30",
+    generation: "12기"
   },
   {
     id: 4,
