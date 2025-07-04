@@ -23,7 +23,7 @@ export default function ScrollToTopBtn() {
         className="fixed top-[648px] right-[50px] bg-white text-black rounded-full w-[64px] h-[64px] flex items-center justify-center shadow-lg cursor-pointer"
         aria-label="Scroll to top"
       >
-        <img src="/public/images/upBtn.png"/>
+        <img src="/images/upBtn.png"/>
       </button>
     )
   );
