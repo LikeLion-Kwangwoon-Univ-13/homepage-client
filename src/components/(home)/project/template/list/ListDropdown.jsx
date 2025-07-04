@@ -27,7 +27,7 @@ const ListDropdown = ({ label, options, onSelect }) => {
         <button
             onClick={() => setOpen(!open)}
             style={{fontFamily: 'Space-Grotesk', fontSize: '24px'}}
-            className="w-full h-[70px] flex items-center justify-between px-[40px] border border-white rounded-[40px] text-white font-bold"
+            className="w-full h-[70px] flex items-center justify-between px-[40px] border border-white rounded-[40px] text-white font-bold cursor-pointer"
         >
             {selected}
             <img src="https://www.svgrepo.com/show/80156/down-arrow.svg" alt="arrow"

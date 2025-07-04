@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Input from "../../../../components/(home)/_widget/Input";
 import ProjectListSection from "../../../../components/(home)/project/template/list/ProjectListSection";
 import ProjectFooter from "../../../../components/(home)/project/template/main/ProjectFooter";
+import ScrollToTopBtn from "../../../../components/(home)/project/template/list/ScrollToTopBtn";
 
 export default function ProjectListPage() {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ export default function ProjectListPage() {
         </div>
       </div>
       <ProjectFooter/>
+      <ScrollToTopBtn/>
     </div>
   );
 }
