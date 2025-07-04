@@ -65,7 +65,10 @@ const Curriculum = () => {
 			>
 				<div className="flex flex-col items-center mr-6">
 					{index !== current.length -1 && (
-					<div className="mt-[50px] absolute top-[50px] bottom-0 h-[calc(100%-50px)] min-h-[150px] w-[1px] bg-white"></div>
+					<div className={`mt-[50px] absolute top-[50px] bottom-0 h-[calc(100%-50px)] w-[1px] bg-white
+						${
+							selected === "backend" ? "min-h-[150px]" : "min-h-[140px]"
+						}`}></div>
 					)}
 
 					<div
