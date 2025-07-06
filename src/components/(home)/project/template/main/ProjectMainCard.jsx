@@ -20,7 +20,7 @@ export default function ProjectMainCard({ project }) {
             <h3 style={{fontFamily: 'Space Grotesk', fontSize: 40, fontWeight: 700}} className="mt-[10px]">{project.title}</h3>
             <h3 style={{fontFamily: 'Space Grotesk', fontSize: 24, fontWeight: 700}} className="w-[320px] truncate">{project.description}</h3>
         </div>
-        <span style={{fontFamily: 'Space Grotesk', fontSize: 70, fontWeight: 700}} className="mr-[20px] text-right text-rgba(94, 94, 94, 1) opacity-30 mt-2 transition-all duration-300 group-hover:opacity-100 group-hover:drop-shadow-[0_0_10px_rgba(233,115,24,1)]">
+        <span style={{fontFamily: 'Space Grotesk', fontSize: 70, fontWeight: 700}} className="mr-[20px] text-right text-[#5E5E5E] opacity-30 mt-2 transition-all duration-300 group-hover:opacity-100 group-hover:text-[#FFCD84] group-hover:drop-shadow-[0_0_10px_#E97318]">
             {String(project.id).padStart(2, "0")}
         </span>
       </div>

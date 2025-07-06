@@ -59,11 +59,11 @@ export default function ProjectSection() {
                 <h2 style={{fontFamily:'Space Grotesk', fontSize: 48}} className="text-white text-3xl font-bold mb-8 mt-[50px]">Works</h2>
 
                 <div className="flex items-center gap-3">
-                    <button onClick={handlePrev} className="w-[96px] h-[96px] rounded-full border border-white text-white text-5xl flex items-center justify-center cursor-pointer">
-                        ←
+                    <button onClick={handlePrev} className="w-[96px] h-[96px] flex items-center justify-center cursor-pointer">
+                        <img src="/images/leftBtn.svg" />
                     </button>
-                    <button onClick={handleNext} className="w-[96px] h-[96px] rounded-full border border-white text-5xl bg-white text-black flex items-center justify-center cursor-pointer">
-                        →
+                    <button onClick={handleNext} className="w-[96px] h-[96px] flex items-center justify-center cursor-pointer">
+                        <img src="/images/rightBtn.svg" />
                     </button>
                 </div>
 

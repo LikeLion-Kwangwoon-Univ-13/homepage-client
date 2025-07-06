@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 const ListDropdown = ({ label, options, onSelect }) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(label);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
   const dropdownRef = useRef(null);
 
   useEffect(()=> {
@@ -23,26 +25,27 @@ const ListDropdown = ({ label, options, onSelect }) => {
   };
 
   return (
-    <div ref={dropdownRef} className="relative min-w-[171px] w-fit whitespace-nowrap">
+    <div ref={dropdownRef} className="relative min-w-[171px] w-fit whitespace-nowrap" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <button
             onClick={() => setOpen(!open)}
-            style={{fontFamily: 'Space-Grotesk', fontSize: '24px'}}
+            style={{fontFamily: 'Space Grotesk', fontSize: '24px'}}
             className="w-full h-[70px] flex items-center justify-between px-[40px] border border-white rounded-[40px] text-white font-bold cursor-pointer"
         >
             {selected}
-            <img src="https://www.svgrepo.com/show/80156/down-arrow.svg" alt="arrow"
-                className="w-[21px] h-[10px] ml-[10px] invert"
+            <img src="/images/dropdown-arrow.png" alt="arrow"
+                className={`w-[21px] h-[10px] ml-[10px] ${isHovered || open ? "" : "rotate-180"}`}
             />
         </button>
 
       {open && (
-        <ul style={{fontFamily: 'Space-Grotesk', fontSize: '20px'}}className="text-white absolute z-10 mt-2 w-full bg-black border border-white rounded-[32px] overflow-hidden shadow-lg">
+        <ul style={{fontFamily: 'Space Grotesk', fontSize: '20px', backgroundColor: '#303030'}} className="text-white absolute z-10 mt-2 w-full overflow-hidden shadow-lg rounded-[20px]">
           {options.map((option, idx) => (
             <li
               key={idx}
               onClick={() => handleSelect(option)}
-              style={{fontFamily: 'Space-Grotesk', fontSize: '20px'}}
-              className="px-6 py-3 hover:bg-white hover:text-black cursor-pointer whitespace-nowrap"
+              onMouseEnter={() => setHoveredIndex(idx)} onMouseLeave={() => setHoveredIndex(null)}
+              style={{fontFamily: 'Space Grotesk', fontSize: '20px', backgroundColor: hoveredIndex === idx ? "#5E5E5E" : "#303030", fontWeight: hoveredIndex === idx ? 700 : 400, transition: "all 0.2s ease"}}
+              className="px-6 py-3 cursor-pointer whitespace-nowrap rounded-[20px]"
             >
               {option}
             </li>

@@ -4,7 +4,7 @@ export default function ProjectDetailInfoCard({project}) {
   if (!project) return null;
 
   return (
-    <div style={{fontFamily: 'Space Grotesk'}} className="ml-[300px] px-[45px] pt-[32px] border rounded-[20px] w-[548px] h-[383px]">
+    <div style={{fontFamily: 'Space Grotesk'}} className="ml-[300px] px-[45px] pt-[32px] border rounded-[20px] w-[548px] h-[423px]">
         <h2 style={{fontSize: "24px", fontWeight: 700}} className="mb-[20px]">헌터X헌터</h2>
         <div className="mb-[20px] flex flex-row">
             <div style={{fontSize: "20px", fontWeight: 700}} className="font-semibold whitespace-nowrap">팀원</div>
@@ -17,12 +17,18 @@ export default function ProjectDetailInfoCard({project}) {
             </div>
         </div>
         <div className="mb-[20px] flex flex-row">
+            <div style={{fontSize: "20px", fontWeight: 700}}>진행 기수</div>
+            <div style={{fontSize: "20px", fontWeight: 400}} className="ml-[120px]">
+                {project.generation}
+            </div>
+        </div>
+        <div className="mb-[20px] flex flex-row">
             <div style={{fontSize: "20px", fontWeight: 700}}>프로젝트 형태</div>
             <div style={{fontSize: "20px", fontWeight: 400}} className="ml-[80px]">
                 {project.type}
             </div>
         </div>
-        <div className="mb-[20px] flex flex-row">
+        <div className="flex flex-row">
             <div style={{fontSize: "20px", fontWeight: 700}}>프로젝트 기간</div>
             <div style={{fontSize: "20px", fontWeight: 400}} className="ml-[80px]">
                 {project.term}
