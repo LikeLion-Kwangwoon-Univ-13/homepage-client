@@ -28,8 +28,8 @@ const ProjectListSection = ({query}) => {
   return (
     <div className="mb-10">
         <div className="flex gap-[12px] mt-[80px] mb-[31px]">
-            <ListDropdown label="기수" options={["12기", "13기"]} onSelect={handleGenChange} />
-            <ListDropdown label="활동" options={["해커톤", "아이디어톤", "개인 활동"]} onSelect={handleActChange} />
+            <ListDropdown label="기수" options={["전체", "13기", "12기"]} onSelect={handleGenChange}/>
+            <ListDropdown label="활동" options={["전체", "해커톤", "아이디어톤", "프로젝트", "개인"]} onSelect={handleActChange} />
         </div>
 
 <div className="w-full">

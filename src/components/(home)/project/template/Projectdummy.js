@@ -34,9 +34,9 @@ const ListDummyProjects = [
     image: "/images/kwlogo.png",
     images: [
     "/images/kwlogo.png",
-    "/images/kwlogo.png",
-    "/images/kwlogo.png",
     "/images/kwvizer4.png",
+    "/images/kwlogo.png",
+    "/images/kwlogo.png",
     ],
     team: [
       { role: "frontend", name: "고은빈" },
@@ -97,6 +97,7 @@ const ListDummyProjects = [
       { role: "frontend", name: "유승연" },
     ],
     stack: "React Django",
+    generation: "13기",
     term: "2024-09-01 ~ 2025-06-30"
   },
   {
@@ -121,6 +122,7 @@ const ListDummyProjects = [
       { role: "frontend", name: "유승연" },
     ],
     stack: "React Django",
+    generation: "13기",
     term: "2024-09-01 ~ 2025-06-30"
   },
   {

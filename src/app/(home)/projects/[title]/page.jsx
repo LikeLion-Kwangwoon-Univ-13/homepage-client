@@ -40,16 +40,16 @@ export default function ProjectDetailPage() {
           <div className="mt-[-50px] flex flex-col flex-1 items-center">
             <div>
                 <div className="relative w-full flex flex-row items-center">
-                    <button className="mr-[100px] text-gray-300 text-4xl z-10 cursor-pointer" onClick={goPrev}>
-                        ❮
+                    <button className="mr-[100px] z-10 cursor-pointer" onClick={goPrev}>
+                        <img src="/images/img-leftBtn.svg" />
                     </button>
                     <img
                         src={images[currentIndex]} 
                         alt="Project"
-                        className="w-[768px] h-[432px] object-cover rounded-[24px]"
+                        className="w-[768px] h-[432px] rounded-[24px]"
                     />
-                    <button className="ml-[100px] text-gray-300 text-4xl z-10 cursor-pointer" onClick={goNext}>
-                        ❯
+                    <button className="ml-[100px] z-10 cursor-pointer" onClick={goNext}>
+                        <img src="/images/img-rightBtn.svg" />
                     </button>
                 </div>
             </div>
