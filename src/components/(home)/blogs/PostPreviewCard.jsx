@@ -1,54 +1,67 @@
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom"
+import { cn } from "@/utils"
 
 export default function PostPreviewCard({ id, title, summary, tags, imageUrl }) {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+
+  const cardOuter = {
+    layout:
+      "flex items-center text-white cursor-pointer hover:border-white transition duration-200",
+    border: "border-b border-gray-700",
+    size: "w-[1490px] h-[300px]",
+  }
+
+  const innerWrapper = {
+    layout: "flex items-center text-white",
+    border: "border-b border-gray-700",
+    size: "w-[1490px] h-[300px]",
+  }
+
+  const textBlock = {
+    layout: "flex flex-col flex-1 pl-7",
+  }
+
+  const titleStyle = "text-[26px] font-bold mb-2"
+  const summaryStyle = "text-[22px] text-gray-400 mb-4"
+  const tagListStyle = "flex gap-2 flex-wrap"
+  const tagStyle = {
+    appearance: "rounded-full text-xs px-3 py-1 border",
+    custom: "border-[#D9D9D9]",
+  }
+
+  const imageWrapper = {
+    layout: "bg-[#111] border rounded-xl p-2",
+    size: "w-[375px] h-[211px] mr-[49px]",
+    border: "border-[#D9D9D9]",
+  }
+
+  const imageStyle = "w-full h-full object-contain rounded-md"
 
   return (
-    <div
-      onClick={() => navigate(`/blogs/${id}`)}
-      className="flex items-center border-b border-gray-700 text-white cursor-pointer 
-             hover:border-white transition duration-200"
-      style={{ width: 1490, height: 300 }}
-    >
-    <div
-      className="flex items-center border-b border-gray-700 text-white"
-      style={{ width: 1490, height: 300 }}
-    >
-      {/* 텍스트 */}
-      <div className="flex flex-col flex-1 pl-7">
-        <h3 className="text-[26px] font-bold mb-2">{title}</h3>
-        <p className="text-[22px] text-gray-400 mb-4">{summary}</p>
-        <div className="flex gap-2 flex-wrap">
-          {tags.map((tag, i) => (
-            <span
-              key={i}
-              className="rounded-full text-xs px-3 py-1 border"
-              style={{ borderColor: "#D9D9D9" }}
-            >
-            {tag}
-            </span>
-          ))}
+    <div onClick={() => navigate(`/blogs/${id}`)} className={cn(cardOuter)}>
+      <div className={cn(innerWrapper)}>
+        {/* 텍스트 */}
+        <div className={cn(textBlock)}>
+          <h3 className={titleStyle}>{title}</h3>
+          <p className={summaryStyle}>{summary}</p>
+          <div className={tagListStyle}>
+            {tags.map((tag, i) => (
+              <span key={i} className={cn(tagStyle)}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* 이미지 */}
+        <div className={cn(imageWrapper)}>
+          <img
+            src={imageUrl || "/kw_univ_emblem.png"}
+            alt={title}
+            className={imageStyle}
+          />
         </div>
       </div>
-
-      {/* 이미지 불러옴 */}
-      <div
-        className="bg-[#111] border rounded-xl p-2"
-        style={{
-          width: 375,
-          height: 211,
-          marginRight: 49,
-          borderColor: "#D9D9D9"
-        }}
-      >
-        <img
-          src={imageUrl || "/kw_univ_emblem.png"}
-          alt={title}
-          className="w-full h-full object-contain rounded-md"
-        />
-      </div>
     </div>
-    </div>
-  );
+  )
 }
