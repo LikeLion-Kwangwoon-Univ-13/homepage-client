@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AdminHome } from "./admin";
 import { Home, About, Project, Blog, Team, Recruit } from "./(home)";
-import Layout from "@/components/(home)/_common/template/Layout.template.jsx";
+import Layout from "@/components/(home)/_common/template/Layout.template";
 export default function App() {
 
   return (

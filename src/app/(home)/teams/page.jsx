@@ -1,5 +1,5 @@
 // src/app/(home)/teams/page.jsx
-import TeamSection from "./template/TeamSection.template.jsx";
+import TeamSection from "./template/TeamSection.template";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
