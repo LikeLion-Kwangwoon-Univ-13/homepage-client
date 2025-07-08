@@ -23,6 +23,7 @@ export default function BlogAllPage() {
     }
   });
 
+
   const recentPosts = data?.posts ?? [];
 
   // 검색어 필터링

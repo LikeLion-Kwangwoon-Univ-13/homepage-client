@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import http from "../../../../service/api/axios";
+import { useEffect } from "react";
 
 export default function BlogDetailPage() {
   const { id } = useParams();
@@ -12,6 +13,10 @@ export default function BlogDetailPage() {
       return res.data.posts.find((post) => String(post.id) === id);
     }
   });
+  useEffect(() => {
+    console.log('data', data);
+  }, [data]);
+
 
   if (isLoading) return <p className="text-white text-center mt-20">불러오는 중입니다~~</p>;
   if (isError || !data) return <p className="text-red-500 text-center mt-20">게시글을 찾을 수 없습니다.</p>;
