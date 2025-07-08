@@ -8,7 +8,7 @@ publish = "dist"
 
 [[redirects]]
 from = "/api/*"
-to = "https://kwu-likelion.vercel.app/api/:splat"
+to = "${VITE_API_ORIGIN}/:splat"
 status = 200
 force = true
 
