@@ -8,7 +8,7 @@ publish = "dist"
 
 [[redirects]]
 from = "/api/*"
-to = "${VITE_API_ORIGIN}/:splat"
+to = "http://54.180.254.133:8080/:splat"
 status = 200
 force = true
 
