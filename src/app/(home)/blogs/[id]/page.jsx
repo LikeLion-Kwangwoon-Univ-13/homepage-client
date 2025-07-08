@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom"
-import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
-import { cn } from "@/utils"
+import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import http from "../../../../service/api/axios";
+import { useEffect } from "react";
 
 export default function BlogDetailPage() {
   const { id } = useParams()
@@ -9,10 +9,13 @@ export default function BlogDetailPage() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["blog-detail", id],
     queryFn: async () => {
-      const res = await axios.get("/api/blog")
-      return res.data.posts.find((post) => String(post.id) === id)
-    },
-  })
+      const res = await http.get("/api/blog");
+      return res.data.posts.find((post) => String(post.id) === id);
+    }
+  });
+  useEffect(() => {
+    console.log('data', data);
+  }, [data]);
 
   const loadingStyle = { text: "text-white text-center mt-20" }
   const errorStyle = { text: "text-red-500 text-center mt-20" }
