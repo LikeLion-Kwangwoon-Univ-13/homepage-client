@@ -22,6 +22,23 @@ export default defineConfig(({ mode }) => {
 
   return {
     ...devConfig(mode),
+    server: {
+      proxy: {
+        '/api': {
+          target: env.VITE_API_ORIGIN ??'/',
+          changeOrigin: true,
+          secure: false,
+          rewrite: (path) => path.replace(/^\/api/, '/'),
+          configure: (proxy, _options) => {
+            proxy.on('proxyRes', (proxyRes) => {
+              if (proxyRes.statusCode === 308) {
+                proxyRes.statusCode = 200;
+              }
+            });
+          }
+        }
+      }
+    },
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: [
