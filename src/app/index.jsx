@@ -4,6 +4,7 @@ import { Home, About, Project, Blog, Team, Recruit } from "./(home)";
 import Layout from "@/components/(home)/_common/template/Layout.template";
 import NotFound from "./not-found";
 import AboutCurriculumPage from "./(home)/about/curriculm/page";
+import AboutPartsPage from "./(home)/about/parts/page";
 export default function App() {
 
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about">
             <Route index element={<About />} />
+            <Route path="parts" element={<AboutPartsPage />} />
             <Route path="curriculums" element={<AboutCurriculumPage />} />
           </Route>
           <Route path="blogs/*" element={<Blog />} />
