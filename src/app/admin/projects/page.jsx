@@ -5,12 +5,12 @@ export default function ProjectListPage() {
 	const { projects } = useProjectHistory()
 
 	return (
-		<div className="p-6">
+		<div >
 			<div className="flex justify-between items-center mb-6">
 				<h1 className="text-2xl font-bold text-white">프로젝트 관리</h1>
 				<Link
 					to="/admin/projects/post"
-					className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+					className="bg-[#E74F13] text-white px-4 py-2 rounded hover:bg-[#D63F0F] transition-colors"
 				>
 					프로젝트 등록
 				</Link>
@@ -45,7 +45,7 @@ export default function ProjectListPage() {
 						<div className="flex gap-2">
 							<Link
 								to={`/admin/projects/${project.id}`}
-								className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition-colors"
+								className="bg-[#EA580C] text-white px-3 py-1 rounded hover:bg-[#E74F13] transition-colors"
 							>
 								상세 보기
 							</Link>

@@ -1,29 +1,9 @@
 import { useState } from 'react'
+import { stacks } from '../../../assets/json/stack'
 
 const POSITIONS = ['운영진', '부원']
 const PARTS = ['프론트엔드', '백엔드', '디자인', 'PM']
 
-const AVAILABLE_STACKS = [
-  'React',
-  'Next.js',
-  'Vue.js',
-  'Angular',
-  'Spring Boot',
-  'Node.js',
-  'Django',
-  'Flask',
-  'MySQL',
-  'PostgreSQL',
-  'MongoDB',
-  'Redis',
-  'AWS',
-  'Docker',
-  'Kubernetes',
-  'Figma',
-  'Adobe XD',
-  'Adobe Photoshop',
-  'Adobe Illustrator'
-]
 
 export default function AddMemberModal({ isOpen, onClose, onSubmit }) {
   const [formData, setFormData] = useState({
@@ -123,7 +103,7 @@ export default function AddMemberModal({ isOpen, onClose, onSubmit }) {
             <label className="text-white text-sm">기술 스택</label>
             <div className="flex flex-wrap gap-2">
               {formData.stacks.map((stack, index) => (
-                <div key={index} className="flex items-center bg-blue-500 text-white px-2 py-1 rounded">
+                <div key={index} className="flex items-center bg-[#E74F13] text-white px-2 py-1 rounded">
                   <span>{stack}</span>
                   <button
                     type="button"
@@ -152,7 +132,7 @@ export default function AddMemberModal({ isOpen, onClose, onSubmit }) {
               className="w-full bg-[#1A1A1A] text-white p-2 rounded"
             >
               <option value="">기술 스택 추가</option>
-              {AVAILABLE_STACKS.filter(stack => !formData.stacks.includes(stack)).map(stack => (
+              {stacks.filter(stack => !formData.stacks.includes(stack)).map(stack => (
                 <option key={stack} value={stack}>{stack}</option>
               ))}
             </select>
@@ -161,13 +141,13 @@ export default function AddMemberModal({ isOpen, onClose, onSubmit }) {
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors"
+              className="flex-1 bg-[#6B7280] text-white px-4 py-2 rounded hover:bg-[#4B5563] transition-colors"
             >
               취소
             </button>
             <button
               type="submit"
-              className="flex-1 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+              className="flex-1 bg-[#E74F13] text-white px-4 py-2 rounded hover:bg-[#D63F0F] transition-colors"
             >
               추가
             </button>

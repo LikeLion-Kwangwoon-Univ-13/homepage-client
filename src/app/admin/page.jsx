@@ -31,7 +31,7 @@ export default function AdminDashboard() {
   }, [blogs, bestBlogs, projects,])
 
   return (
-    <div className="p-8 space-y-8">
+    <div className="space-y-8">
       <h1 className="text-2xl font-bold text-white">대시보드</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {stats.map((stat, index) => (

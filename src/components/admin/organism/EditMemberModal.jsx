@@ -119,7 +119,7 @@ export default function EditMemberModal({ isOpen, onClose, onSubmit, member }) {
             <label className="text-white text-sm">기술 스택</label>
             <div className="flex flex-wrap gap-2">
               {formData.stacks.map((stack, index) => (
-                <div key={index} className="flex items-center bg-blue-500 text-white px-2 py-1 rounded">
+                <div key={index} className="flex items-center bg-[#E74F13] text-white px-2 py-1 rounded">
                   <span>{stack}</span>
                   <button
                     type="button"
@@ -157,13 +157,13 @@ export default function EditMemberModal({ isOpen, onClose, onSubmit, member }) {
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors"
+              className="flex-1 bg-[#6B7280] text-white px-4 py-2 rounded hover:bg-[#4B5563] transition-colors"
             >
               취소
             </button>
             <button
               type="submit"
-              className="flex-1 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+              className="flex-1 bg-[#E74F13] text-white px-4 py-2 rounded hover:bg-[#D63F0F] transition-colors"
             >
               수정
             </button>

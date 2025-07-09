@@ -54,13 +54,13 @@ export default function RecruitAdminPage() {
 	}
 
 	return (
-		<div className="p-8">
+		<div>
 			<div className="flex justify-between items-center mb-8">
 				<h1 className="text-2xl font-bold text-white">모집 공고 관리</h1>
 				{!isEditing && (
 					<button
 						onClick={handleEdit}
-						className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+						className="bg-[#E74F13] text-white px-4 py-2 rounded hover:bg-[#D63F0F] transition-colors"
 					>
 						{recruit ? '수정하기' : '새로 등록'}
 					</button>
@@ -120,7 +120,7 @@ export default function RecruitAdminPage() {
 								type="url"
 								value={formData.url}
 								onChange={(e) => setFormData({ ...formData, url: e.target.value })}
-								className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+								className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-[#E74F13]"
 								required
 							/>
 						</div>
@@ -131,7 +131,7 @@ export default function RecruitAdminPage() {
 									type="date"
 									value={formData.documentDate}
 									onChange={(e) => setFormData({ ...formData, documentDate: e.target.value })}
-									className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+									className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-[#E74F13]"
 									required
 								/>
 							</div>
@@ -141,7 +141,7 @@ export default function RecruitAdminPage() {
 									type="date"
 									value={formData.candidateDate}
 									onChange={(e) => setFormData({ ...formData, candidateDate: e.target.value })}
-									className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+									className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-[#E74F13]"
 									required
 								/>
 							</div>
@@ -151,7 +151,7 @@ export default function RecruitAdminPage() {
 									type="date"
 									value={formData.interviewDate}
 									onChange={(e) => setFormData({ ...formData, interviewDate: e.target.value })}
-									className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+									className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-[#E74F13]"
 									required
 								/>
 							</div>
@@ -161,7 +161,7 @@ export default function RecruitAdminPage() {
 									type="date"
 									value={formData.acceptDate}
 									onChange={(e) => setFormData({ ...formData, acceptDate: e.target.value })}
-									className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+									className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-[#E74F13]"
 									required
 								/>
 							</div>
@@ -171,7 +171,7 @@ export default function RecruitAdminPage() {
 									type="date"
 									value={formData.otDate}
 									onChange={(e) => setFormData({ ...formData, otDate: e.target.value })}
-									className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+									className="w-full bg-[#1A1A1A] text-white px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-[#E74F13]"
 									required
 								/>
 							</div>
@@ -180,14 +180,14 @@ export default function RecruitAdminPage() {
 					<div className="flex gap-2 mt-6">
 						<button
 							type="submit"
-							className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+							className="bg-[#E74F13] text-white px-4 py-2 rounded hover:bg-[#D63F0F] transition-colors"
 						>
 							저장
 						</button>
 						<button
 							type="button"
 							onClick={handleCancel}
-							className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors"
+							className="bg-[#6B7280] text-white px-4 py-2 rounded hover:bg-[#4B5563] transition-colors"
 						>
 							취소
 						</button>

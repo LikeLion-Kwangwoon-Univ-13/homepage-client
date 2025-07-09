@@ -69,13 +69,13 @@ export default function MemberList({ members, onUpdate, onDelete }) {
               <div className="flex gap-2">
                 <button
                   onClick={() => handleEdit(member)}
-                  className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition-colors"
+                  className="bg-[#E74F13] text-white px-3 py-1 rounded hover:bg-[#D63F0F] transition-colors"
                 >
                   수정
                 </button>
                 <button
                   onClick={() => onDelete(member.id)}
-                  className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors"
+                  className="bg-[#DC2626] text-white px-3 py-1 rounded hover:bg-[#B91C1C] transition-colors"
                 >
                   삭제
                 </button>

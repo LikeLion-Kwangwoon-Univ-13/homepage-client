@@ -52,7 +52,7 @@ export default function GenerationMemberPage() {
 				<h1 className="text-2xl font-bold text-white">{generationId}기 멤버 관리</h1>
 				<button
 					onClick={() => setIsAddModalOpen(true)}
-					className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+					className="bg-[#E74F13] text-white px-4 py-2 rounded hover:bg-[#D63F0F] transition-colors"
 				>
 					멤버 추가
 				</button>

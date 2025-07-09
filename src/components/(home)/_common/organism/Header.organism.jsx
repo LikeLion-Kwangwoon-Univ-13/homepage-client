@@ -44,11 +44,11 @@ export default function Header() {
 		<div className={cn(container)}>
 			<div
 				onClick={() => router('/')}
-				className="pl-5 hidden xl:flex items-center gap-x-[4.91px] cursor-pointer">
-				<img src="/images/logo.png" className="w-[47px] " />
-				<div className="text-white text-[24px] font-bold">광운대 멋쟁이 사자처럼</div>
+				className="pl-5  items-center gap-x-[4.91px] cursor-pointer">
+				<img onClick={() => router('/')} src="/images/logo.png" className="w-[47px] " />
+				<div className="hidden xl:flex text-white text-[24px] font-bold">광운대 멋쟁이 사자처럼</div>
 			</div>
-			<div className="pr-5 flex items-center gap-x-[52px] leading-none h-full justify-between xl:justify-start w-full xl:w-auto">
+			<div className="pr-5 flex items-center xl:gap-x-[52px] leading-none h-full justify-between xl:justify-start max-w-[720px] w-full xl:max-w-none xl:w-auto">
 				{links.map((link, index) => (
 					<Link key={index} to={link.path}
 						onMouseEnter={() => setHover(link.path)}
@@ -60,7 +60,7 @@ export default function Header() {
 				))}
 				<button
 					onClick={() => router('/recruit')}
-					className="text-white text-[16px] xl:text-[24px] font-bold px-5 border border-white w-[129px] h-[44px] rounded-[10px]" >
+					className="text-white text-[12px] md:text-[16px] xl:text-[24px] font-bold px-5 border border-white  aspect-[129/44]  md:w-[100px] xl:w-[129px] rounded-[10px]" >
 					지원하기
 				</button>
 			</div>

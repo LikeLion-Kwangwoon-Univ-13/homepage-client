@@ -25,7 +25,7 @@ export default function BlogPage() {
         <h1 className="text-2xl font-bold text-white">블로그 관리</h1>
         <button
           onClick={() => setIsAddModalOpen(true)}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+          className="bg-[#E74F13] text-white px-4 py-2 rounded hover:bg-[#D63F0F] transition-colors"
         >
           블로그 등록
         </button>
@@ -85,13 +85,13 @@ export default function BlogPage() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => cancelBestPost.mutate(post.id)}
-                    className="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 transition-colors"
+                    className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-[#DC2626] transition-colors"
                   >
                     베스트 해제
                   </button>
                   <button
                     onClick={() => deletePost.mutate(post.id)}
-                    className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors"
+                    className="bg-[#DC2626] text-white px-3 py-1 rounded hover:bg-[#B91C1C] transition-colors"
                   >
                     삭제
                   </button>
@@ -156,13 +156,13 @@ export default function BlogPage() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => setBestPost.mutate(post.id)}
-                    className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-gray-600 transition-colors"
+                    className="bg-[#E74F13] text-white px-3 py-1 rounded hover:bg-[#D63F0F] transition-colors"
                   >
                     베스트 설정
                   </button>
                   <button
                     onClick={() => handleDelete(post.id)}
-                    className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition-colors"
+                    className="bg-[#DC2626] text-white px-3 py-1 rounded hover:bg-[#B91C1C] transition-colors"
                   >
                     삭제
                   </button>

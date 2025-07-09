@@ -176,13 +176,13 @@ export default function ProjectPostPage() {
           <button
             type="button"
             onClick={() => navigate('/admin/projects')}
-            className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors"
+            className="bg-[#6B7280] text-white px-4 py-2 rounded hover:bg-[#4B5563] transition-colors"
           >
             취소
           </button>
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+            className="bg-[#E74F13] text-white px-4 py-2 rounded hover:bg-[#D63F0F] transition-colors"
           >
             등록
           </button>
