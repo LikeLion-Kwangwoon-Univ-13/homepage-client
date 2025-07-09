@@ -11,8 +11,15 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+     },
       animation: {
         'spin-slow': 'spin 10s linear infinite',
+        'fade-in': 'fadeIn 0.6s ease-out forwards',
       },
       fontFamily: {
         space: ['"Space Grotesk"', 'sans-serif'],
