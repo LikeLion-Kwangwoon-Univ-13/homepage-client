@@ -6,7 +6,7 @@ export default function useGeneration() {
   const createGeneration = useMutation({
     mutationFn: (data) => generationApi.post(data),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['generations'] })
+      return
     },
 		onError: (error) => {
 			if(error.status !== 400){

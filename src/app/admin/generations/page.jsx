@@ -9,11 +9,10 @@ export default function GenerationPage() {
 	const handleCreate = async (e) => {
 		e.preventDefault()
 		try {
-			const result = await createGeneration.mutateAsync({
+			await createGeneration.mutate({
 				generation: parseInt(generation)
 			})
-			alert('기수가 생성되었습니다.')
-			navigate(`/admin/generations/${result.id}`)
+			navigate(`/admin/generations/${generation}`)
 		} catch (error) {
 			if (error.status === 400) {
 				navigate(`/admin/generations/${generation}`)
@@ -33,8 +32,8 @@ export default function GenerationPage() {
 						placeholder="기수 입력 (ex: 14)"
 						className="flex-1 bg-[#1A1A1A] text-white p-2 rounded w-full h-16 focus:outline-none text-2xl text-center "
 						onKeyDown={(e) => {
-							if (e.key === 'Enter' && generation) {
-								handleCreate()
+							if (e.key === 'Enter' && generation && !e.nativeEvent.isComposing) {
+								handleCreate(e)
 							}
 						}}
 					/>
