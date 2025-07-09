@@ -27,7 +27,7 @@ export default function TeamCard({
       </div>
 
       {/* 기술 스택 */}
-      <div className="flex gap-[6px] mt-1">
+      <div className="flex flex-wrap gap-[6px] mt-1 overflow-hidden justify-center">
         {stack.map((item, idx) => (
           <span
             key={idx}
