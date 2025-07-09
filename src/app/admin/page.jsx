@@ -1,14 +1,8 @@
-import { useQuery } from "@tanstack/react-query"
-import http from "../../service/api/axios";
+import NotFound from "../not-found";
+import useEnterAdmin from "../../hooks/useEnterAdmin";
 
 export default function Page() {
-	const { data } = useQuery({
-		queryKey: ['test'],
-		queryFn: async () => {
-			const res = await http.get("/api/blog");
-			return res.data;
-		}
-	})
-	console.log(data)
-	return <div>admin</div>
+  const { isEnterAdmin } = useEnterAdmin();
+  if (!isEnterAdmin) return <NotFound />;
+  return <div>admin</div>;
 }

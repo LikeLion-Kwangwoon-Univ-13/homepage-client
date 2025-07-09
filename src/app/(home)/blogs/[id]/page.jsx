@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import http from "../../../../service/api/axios";
-import { useEffect } from "react";
 
 export default function BlogDetailPage() {
   const { id } = useParams();
@@ -11,24 +10,36 @@ export default function BlogDetailPage() {
     queryFn: async () => {
       const res = await http.get("/api/blog");
       return res.data.posts.find((post) => String(post.id) === id);
-    }
+    },
   });
-  useEffect(() => {
-    console.log('data', data);
-  }, [data]);
 
+  const loadingStyle = { text: "text-white text-center mt-20" };
+  const errorStyle = { text: "text-red-500 text-center mt-20" };
 
-  if (isLoading) return <p className="text-white text-center mt-20">불러오는 중입니다~~</p>;
-  if (isError || !data) return <p className="text-red-500 text-center mt-20">게시글을 찾을 수 없습니다.</p>;
+  const pageWrapper = {
+    size: "max-w-[1200px] mx-auto",
+    style: "text-white p-10",
+  };
+
+  const titleStyle = "text-4xl font-bold mb-4";
+  const contentStyle = "text-gray-400 mb-6";
+  const imageStyle = "rounded-xl w-full mb-6";
+
+  const tagList = "flex gap-2 flex-wrap";
+  const tagStyle = "px-3 py-1 text-xs border border-white rounded-full";
+
+  if (isLoading) return <p className={cn(loadingStyle)}>로딩중</p>;
+  if (isError || !data)
+    return <p className={cn(errorStyle)}>게시글을 찾을 수 없습니다.</p>;
 
   return (
-    <div className="max-w-[1200px] mx-auto text-white p-10">
-      <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
-      <div className="text-gray-400 mb-6">{data.contents}</div>
-      <img src={data.thumbnail} alt={data.title} className="rounded-xl w-full mb-6" />
-      <div className="flex gap-2 flex-wrap">
+    <div className={cn(pageWrapper)}>
+      <h1 className={titleStyle}>{data.title}</h1>
+      <div className={contentStyle}>{data.contents}</div>
+      <img src={data.thumbnail} alt={data.title} className={imageStyle} />
+      <div className={tagList}>
         {data.tags.map((tag, idx) => (
-          <span key={idx} className="px-3 py-1 text-xs border border-white rounded-full">
+          <span key={idx} className={tagStyle}>
             {tag}
           </span>
         ))}
