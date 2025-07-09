@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AdminHome } from "./admin";
 import { Home, About, Project, Blog, Team, Recruit } from "./(home)";
 import Layout from "@/components/(home)/_common/template/Layout.template";
+import NotFound from "./not-found";
+import AboutCurriculumPage from "./(home)/about/curriculm/page";
 export default function App() {
 
   return (
@@ -11,7 +13,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about">
             <Route index element={<About />} />
-            {/* <Route path="curriculums" element={<Curriculum />} /> */}
+            <Route path="curriculums" element={<AboutCurriculumPage />} />
           </Route>
           <Route path="blogs/*" element={<Blog />} />
           <Route path="projects/*" element={<Project />} />
@@ -21,7 +23,7 @@ export default function App() {
         <Route path="/admin">
           <Route index element={<AdminHome />} />
         </Route>
-        <Route path="*" element={<div>404</div>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
