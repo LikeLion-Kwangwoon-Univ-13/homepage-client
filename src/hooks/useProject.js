@@ -38,11 +38,12 @@ export default function useProject(){
 }
 
 export function useProjectById(id){
-	const {data:project}=useQuery({
+	const {data:project, isLoading, error}=useQuery({
 		queryKey:["project",id],
-		queryFn:()=>projectApi.getById(id)
+		queryFn:()=>projectApi.getById(id),
+		enabled: !!id
 	})
-	return {project}
+	return {project, isLoading, error}
 }
 	
 export function useProjectHistory(){
