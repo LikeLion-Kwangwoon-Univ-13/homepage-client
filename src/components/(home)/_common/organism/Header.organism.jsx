@@ -44,9 +44,9 @@ export default function Header() {
 		<div className={cn(container)}>
 			<div
 				onClick={() => router('/')}
-				className="pl-5  items-center gap-x-[4.91px] cursor-pointer">
+				className="pl-5 flex items-center items-center gap-x-[4.91px] cursor-pointer">
 				<img onClick={() => router('/')} src="/images/logo.png" className="w-[47px] " />
-				<div className="hidden xl:flex text-white text-[24px] font-bold">광운대 멋쟁이 사자처럼</div>
+				<div className="hidden xl:block text-white text-[24px] font-bold">광운대 멋쟁이 사자처럼</div>
 			</div>
 			<div className="pr-5 flex items-center xl:gap-x-[52px] leading-none h-full justify-between xl:justify-start max-w-[720px] w-full xl:max-w-none xl:w-auto">
 				{links.map((link, index) => (
