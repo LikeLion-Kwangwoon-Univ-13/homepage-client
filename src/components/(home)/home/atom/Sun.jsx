@@ -1,11 +1,23 @@
 import { cn } from "@/utils"
 import { useState, useEffect, useRef } from 'react'
 import { useSpring, animated } from '@react-spring/web'
+import useEnterAdmin from "../../../../hooks/useEnterAdmin";
 
 export default function Sun({ init }) {
+	const { isAdminInit } = useEnterAdmin();
 	const [count, setCount] = useState(0)
 	const [isReversing, setIsReversing] = useState(false)
+	const [shouldSpin, setShouldSpin] = useState(false)
 	const intervalRef = useRef()
+
+	useEffect(() => {
+		if (isAdminInit) {
+			const timer = setTimeout(() => {
+				setShouldSpin(true);
+			}, 4000); // 5초 후에 spin 시작
+			return () => clearTimeout(timer);
+		}
+	}, [isAdminInit]);
 
 	useEffect(() => {
 		intervalRef.current = setInterval(() => {
@@ -47,7 +59,8 @@ export default function Sun({ init }) {
 	const container = {
 		base: 'absolute left-1/2 -translate-x-1/2',
 		location: !init ? 'bottom-0 translate-y-1/2' : 'absolute left-1/2 -translate-x-1/2',
-		movement: 'transition-all duration-[2s] ease-out',
+		movement: 'transition-all ease-out',
+		admin: shouldSpin ? 'animate-spin scale-[8] duration-[10s]' : 'duration-[2s]',
 	}
 	return (
 		<animated.img

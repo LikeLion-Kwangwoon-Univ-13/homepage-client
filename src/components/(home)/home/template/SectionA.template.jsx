@@ -4,9 +4,11 @@ import Sun from "../atom/Sun"
 import { useEffect, useState } from "react"
 import JoinButton from '../atom/Join'
 import { Link } from "react-router-dom"
+import useEnterAdmin from "../../../../hooks/useEnterAdmin"
 
-export default function SectionA() {
+export default function SectionA({ ref }) {
 	const { init, setInit } = useInitStore();
+	const { isAdminInit } = useEnterAdmin();
 
 	const container = {
 		positions: 'relative',
@@ -14,15 +16,15 @@ export default function SectionA() {
 		size: 'w-full h-full',
 		background: 'bg-[url(/images/noise.png)] bg-repeat',
 		text: 'text-white',
-		overflows: 'overflow-hidden'
+		overflows: 'overflow-hidden '
 	}
 
 	return (
-		<div className={cn(container)}>
+		<div className={cn(container)} ref={ref}>
 			<Sun init={init} />
 			{!init && <Init setInit={setInit} />}
-			<Values init={init} />
-			<FloatButton init={init} />
+			<Values init={!isAdminInit && init} />
+			<FloatButton init={!isAdminInit && init} />
 		</div>
 	)
 }
@@ -46,14 +48,15 @@ function Init({ setInit }) {
 
 function Values({ init }) {
 	const container = {
-		positions: 'z-20',
+		positions: 'absolute top-0 left-0 z-20 ',
+		size:'w-screen h-screen',
 		opacity: init ? 'opacity-100' : 'opacity-0',
 		animations: 'transition-all duration-1000 delay-[2s]',
 		fontFamily: 'font-space',
 	}
 	const likeLion = {
 		positions: 'absolute ',
-		location: !init ? ' left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2' : ' top-1/2 -translate-y-1/2 left-[5%]',
+		location: !init ? ' left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2' : 'top-1/2 -translate-y-1/2 left-[5%]',
 		animations: 'transition-all duration-1000 delay-[2s]',
 		texts: 'text-[64px] leading-none ',
 		style: 'text-white ',
@@ -98,9 +101,12 @@ function Values({ init }) {
 		shadow: 'hover:[text-shadow:0_0_10px_#E74F13,0_0_20px_#E74F13,0_0_40px_#E74F13]',
 	}
 	return <div className={cn(container)}>
+		<div className="w-screen h-screen relative">
 		<div className={cn(likeLion)}>
-			<div>LIKE</div>
-			<div>LION</div>
+			<Link to="/about/parts">
+				<div>LIKE</div>
+				<div>LION</div>
+			</Link>
 		</div>
 		<div className={cn(backText)}>
 			<Link to="/about/curriculums?part=backend" className={cn(textHover)}>
@@ -120,11 +126,12 @@ function Values({ init }) {
 		<div className={cn(univ)}>
 			<div className="text-[60px] font-[100]">Exploding</div>
 			<div className="text-[98px]">X</div>
-			<div className="text-[63px] flex flex-col items-end">
+			<div className="text-[63px] flex flex-col items-end"> 
 				<div>KWANG</div>
 				<div>WOON</div>
 				<div>UNIV</div>
 			</div>
+		</div>
 		</div>
 	</div>
 }

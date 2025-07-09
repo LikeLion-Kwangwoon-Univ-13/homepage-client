@@ -30,7 +30,7 @@ export default function AboutPartsPage() {
 	const container = {
 		position: 'relative',
 		size: 'w-full h-[calc(100vh-92px)]',
-		padding: 'py-[40px] pb-[100px] px-[70px]',
+		padding: 'py-[40px] pb-[100px] px-0 xs:px-[4px] sm:px-[12px]  md:px-[24px] xl:px-[70px]',
 	}
 	const body = {
 		display: 'flex',

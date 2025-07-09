@@ -5,6 +5,17 @@ import Layout from "@/components/(home)/_common/template/Layout.template";
 import NotFound from "./not-found";
 import AboutCurriculumPage from "./(home)/about/curriculm/page";
 import AboutPartsPage from "./(home)/about/parts/page";
+import AdminLayout from '@/components/admin/template/Layout';
+import ProjectListPage from './admin/projects/page';
+import ProjectPostPage from './admin/projects/post/page';
+import ProjectEditPage from './admin/projects/[projectId]/page';
+import GenerationPage from './admin/generations/page';
+import GenerationMemberPage from './admin/generations/[generationId]/page';
+import BlogPage from "./admin/blogs/page";
+import RecruitPage from "./(home)/recruit/page";
+import RecruitAdminPage from "./admin/recruits/page";
+import Loading from "./loading";
+
 export default function App() {
 
   return (
@@ -22,9 +33,17 @@ export default function App() {
           <Route path="teams" element={<Team />} />
           <Route path="recruit" element={<Recruit />} />
         </Route>
-        <Route path="/admin">
+        <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminHome />} />
+          <Route path="projects" element={<ProjectListPage />} />
+          <Route path="projects/post" element={<ProjectPostPage />} />
+          <Route path="projects/:projectId" element={<ProjectEditPage />} />
+          <Route path="generations" element={<GenerationPage />} />
+          <Route path="generations/:generationId" element={<GenerationMemberPage />} />
+          <Route path="blogs" element={<BlogPage />} />
+          <Route path="recruits" element={<RecruitAdminPage />} />
         </Route>
+        <Route path="/loading" element={<Loading />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
