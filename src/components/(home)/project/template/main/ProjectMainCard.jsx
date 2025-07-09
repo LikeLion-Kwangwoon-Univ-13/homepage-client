@@ -7,7 +7,7 @@ export default function ProjectMainCard({ project }) {
 
   return (
     <div
-      onClick={() => navigate(`/projects/projectpage/${encodeURIComponent(project.title)}`, {state: { from: "main" }, })}
+      onClick={() => navigate(`/projects/${project.id}`, {state: { from: "main" }, })}
       className="group flex-shrink-0 w-[545px] h-[365px] bg-[#1A1A1A] text-white p-4 rounded-[32px] border border-[1px] cursor-pointer hover:shadow-xl transition mr-[48px]"
     >
       <img
@@ -21,7 +21,7 @@ export default function ProjectMainCard({ project }) {
             <h3 style={{fontFamily: 'Space Grotesk', fontSize: 24, fontWeight: 700}} className="w-[320px] truncate">{project.description}</h3>
         </div>
         <span style={{fontFamily: 'Space Grotesk', fontSize: 70, fontWeight: 700}} className="mr-[20px] text-right text-[#5E5E5E] opacity-30 mt-2 transition-all duration-300 group-hover:opacity-100 group-hover:text-[#FFCD84] group-hover:drop-shadow-[0_0_10px_#E97318]">
-            {String(project.id).padStart(2, "0")}
+            {String(project.idx).padStart(2, "0")}
         </span>
       </div>
     
@@ -35,5 +35,6 @@ ProjectMainCard.propTypes = {
     id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string.isRequired,
   }).isRequired,
 };
