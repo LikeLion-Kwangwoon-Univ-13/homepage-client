@@ -1,7 +1,7 @@
 import BlogHighlightSection from "../../../components/(home)/blogs/template/Some.template";
 import { Routes, Route } from "react-router-dom";
-import BlogAllPage from "./all/page.jsx";
-import BlogDetailPage from "./[id]/page.jsx";
+import BlogAllPage from "./all/page";
+import BlogDetailPage from "./[id]/page";
 
 
 export default function BlogPage() {

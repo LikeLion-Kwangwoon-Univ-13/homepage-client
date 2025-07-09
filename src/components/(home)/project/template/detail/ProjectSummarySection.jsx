@@ -1,17 +1,17 @@
-// ProjectSummarySection.jsx
+// ProjectSummarySection 
 import React from "react";
 
 export default function ProjectSummarySection({ title }) {
   return (
     <div className="w-[657px] mb-8 ml-[40px] mr-[184px]">
       <h2
-        style={{fontFamily: "Space Grotesk",fontSize: "40px",fontWeight: 700,}}
+        style={{ fontFamily: "Space Grotesk", fontSize: "40px", fontWeight: 700, }}
         className="mb-[24px]"
       >
         {title}
       </h2>
       <p
-        style={{ fontFamily: "Space Grotesk", fontSize: "24px",fontWeight: 500 }}
+        style={{ fontFamily: "Space Grotesk", fontSize: "24px", fontWeight: 500 }}
         className="leading-relaxed"
       >
         학사정보 기반 진로 상담 챗봇 어야양여야 어쩌고 저쩌고 어쩌고 저

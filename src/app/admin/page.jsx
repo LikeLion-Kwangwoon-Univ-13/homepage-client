@@ -1,3 +1,8 @@
+import NotFound from "../not-found";
+import useEnterAdmin from "../../hooks/useEnterAdmin";
+
 export default function Page() {
-	return <div>admin</div>
+  const { isEnterAdmin } = useEnterAdmin();
+  if (!isEnterAdmin) return <NotFound />;
+  return <div>admin</div>;
 }
