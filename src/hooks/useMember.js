@@ -17,14 +17,14 @@ export default function useMember(generationId) {
   })
 
   const updateMember = useMutation({
-    mutationFn: memberApi.patch,
+    mutationFn: ({id,data})=>memberApi.patch(id,data),
     onSuccess: () => {
       queryClient.invalidateQueries(['members', generationId])
     }
   })
 
   const deleteMember = useMutation({
-    mutationFn: memberApi.delete,
+    mutationFn: memberApi._delete,
     onSuccess: () => {
       queryClient.invalidateQueries(['members', generationId])
     }

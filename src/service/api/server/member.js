@@ -57,7 +57,7 @@ async function post(data){
  * @returns {Promise<{success: boolean}>} 수정 성공 여부
  */
 async function patch(id,data){
-	const response = await http.put(`/api/manage/members/${id}`,data)
+	const response = await http.patch(`/api/manage/members/${id}`,data)
 	return response.data
 }
 

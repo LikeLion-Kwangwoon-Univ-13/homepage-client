@@ -47,8 +47,7 @@ export default function EditMemberModal({ isOpen, onClose, onSubmit, member }) {
     }
   }, [member])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = () => {
     onSubmit(formData)
     onClose()
   }
@@ -68,7 +67,7 @@ export default function EditMemberModal({ isOpen, onClose, onSubmit, member }) {
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="grid gap-4">
+        <div className="grid gap-4">
           <input
             type="text"
             value={formData.profile}
@@ -162,13 +161,14 @@ export default function EditMemberModal({ isOpen, onClose, onSubmit, member }) {
               취소
             </button>
             <button
-              type="submit"
+              type="button"
+              onClick={handleSubmit}
               className="flex-1 bg-[#E74F13] text-white px-4 py-2 rounded hover:bg-[#D63F0F] transition-colors"
             >
               수정
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   )

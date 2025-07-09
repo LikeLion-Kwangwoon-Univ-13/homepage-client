@@ -22,13 +22,9 @@ export default function GenerationMemberPage() {
 		}
 	}
 
-	const handleUpdate = async (id, formData) => {
+	const handleUpdate = async (id, data) => {
 		try {
-			await updateMember.mutate({
-				id,
-				...formData,
-				generation: parseInt(generationId)
-			})
+			await updateMember.mutate({id, data})
 			alert('멤버 정보가 수정되었습니다.')
 		} catch (error) {
 			alert('멤버 수정 중 오류가 발생했습니다.')
