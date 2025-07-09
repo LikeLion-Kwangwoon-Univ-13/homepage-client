@@ -21,7 +21,7 @@ export default function ProjectDetailPage() {
     queryFn: () =>
       http.get(`/api/projects/${id}`).then((res) => {
         const data = res.data;
-        const formattedTerm = `${data.start_date.slice(0, 10)} ~ ${data.end_date.slice(0, 10)}`;
+        const formattedTerm = data.start_Date && data.end_Date ? `${data.start_Date.slice(0, 10)} ~ ${data.end_Date.slice(0, 10)}` : "기간 정보 없음";
         return {
           ...data,
           title: data.title,
@@ -34,6 +34,13 @@ export default function ProjectDetailPage() {
         };
       }),
   });
+
+  useEffect(() => {
+    if (project) {
+      console.log("API에서 받은 project 데이터:", project);
+    }
+  }, [project]);
+
 
   if (isLoading) return <p style={{fontFamily: 'Space Grotesk', fontSize: '20px'}} className="text-white">로딩 중...</p>;
   if (isError) return <p style={{fontFamily: 'Space Grotesk', fontSize: '20px'}} className="text-white">오류 발생: {error.message}</p>;
