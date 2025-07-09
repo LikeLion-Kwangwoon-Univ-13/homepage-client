@@ -4,9 +4,11 @@ import Sun from "../atom/Sun"
 import { useEffect, useState } from "react"
 import JoinButton from '../atom/Join'
 import { Link } from "react-router-dom"
+import useEnterAdmin from "../../../../hooks/useEnterAdmin"
 
-export default function SectionA() {
+export default function SectionA({ ref }) {
 	const { init, setInit } = useInitStore();
+	const { isAdminInit } = useEnterAdmin();
 
 	const container = {
 		positions: 'relative',
@@ -18,11 +20,11 @@ export default function SectionA() {
 	}
 
 	return (
-		<div className={cn(container)}>
+		<div className={cn(container)} ref={ref}>
 			<Sun init={init} />
 			{!init && <Init setInit={setInit} />}
-			<Values init={init} />
-			<FloatButton init={init} />
+			<Values init={!isAdminInit && init} />
+			<FloatButton init={!isAdminInit && init} />
 		</div>
 	)
 }

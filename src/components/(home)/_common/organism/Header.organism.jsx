@@ -2,6 +2,7 @@ import { cn } from "@/utils"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import useInitStore from "@/store/initStore"
 import { useEffect, useState } from "react"
+import useEnterAdmin from "../../../../hooks/useEnterAdmin"
 const links = [
 	{
 		name: 'ABOUT',
@@ -22,11 +23,12 @@ const links = [
 ]
 
 export default function Header() {
+	const { isAdminInit } = useEnterAdmin();
 	const [hover, setHover] = useState()
 	const { init } = useInitStore()
 	const router = useNavigate()
 	const pathname = useLocation().pathname;
-	const flag = pathname === '/' ? init : true;
+	const flag = pathname === '/' ? !isAdminInit && init : true;
 
 	const container = {
 		positions: 'fixed left-0 right-0',
