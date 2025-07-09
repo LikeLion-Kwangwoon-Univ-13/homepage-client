@@ -25,10 +25,10 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         '/api': {
-          target: env.VITE_API_ORIGIN ??'/',
+          target: env.VITE_API_ORIGIN,
           changeOrigin: true,
           secure: false,
-          rewrite: (path) => path.replace(/^\/api/, '/'),
+          rewrite: (path) => path.replace(/^\/api/, ''),
           configure: (proxy, _options) => {
             proxy.on('proxyRes', (proxyRes) => {
               if (proxyRes.statusCode === 308) {

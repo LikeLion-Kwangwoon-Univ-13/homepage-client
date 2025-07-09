@@ -3,8 +3,9 @@ import { useEffect, useState, useMemo } from "react"
 import Input from "../../../../components/(home)/_widget/Input"
 import PostPreviewCard from "../../../../components/(home)/blogs/PostPreviewCard"
 import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
 import { cn } from "@/utils"
+import http from "../../../../service/api/axios"
+
 
 export default function BlogAllPage() {
   const navigate = useNavigate()
@@ -19,7 +20,7 @@ export default function BlogAllPage() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["blogs"],
     queryFn: async () => {
-      const res = await axios.get("/api/blog")
+      const res = await http.get("/api/blog")
       return res.data
     },
   })
