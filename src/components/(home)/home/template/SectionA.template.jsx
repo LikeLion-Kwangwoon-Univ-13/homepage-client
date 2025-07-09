@@ -3,6 +3,7 @@ import useInitStore from "@/store/initStore"
 import Sun from "../atom/Sun"
 import { useEffect, useState } from "react"
 import JoinButton from '../atom/Join'
+import { Link } from "react-router-dom"
 
 export default function SectionA() {
 	const { init, setInit } = useInitStore();
@@ -44,9 +45,6 @@ function Init({ setInit }) {
 }
 
 function Values({ init }) {
-	const [frontHover, setFrontHover] = useState(false);
-	const [backHover, setBackHover] = useState(false);
-	const [uiuxHover, setUiuxHover] = useState(false);
 	const container = {
 		positions: 'z-20',
 		opacity: init ? 'opacity-100' : 'opacity-0',
@@ -94,14 +92,31 @@ function Values({ init }) {
 		textStyle: 'text-[64px] leading-none',
 		pointer: 'cursor-default',
 	}
+
+	const textHover = {
+		styles: 'duration-300',
+		shadow: 'hover:[text-shadow:0_0_10px_#E74F13,0_0_20px_#E74F13,0_0_40px_#E74F13]',
+	}
 	return <div className={cn(container)}>
 		<div className={cn(likeLion)}>
 			<div>LIKE</div>
 			<div>LION</div>
 		</div>
-		<div className={cn(backText)} onMouseEnter={() => setBackHover(true)} onMouseLeave={() => setBackHover(false)}>BACKEND</div>
-		<div className={cn(frontText)} onMouseEnter={() => setFrontHover(true)} onMouseLeave={() => setFrontHover(false)}>FRONTEND</div>
-		<div className={cn(uiuxText)} onMouseEnter={() => setUiuxHover(true)} onMouseLeave={() => setUiuxHover(false)}>UXUI DESIGN</div>
+		<div className={cn(backText)}>
+			<Link to="/about/curriculums?part=backend" className={cn(textHover)}>
+				BACKEND
+			</Link>
+		</div>
+		<div className={cn(frontText)} >
+			<Link to="/about/curriculums?part=frontend" className={cn(textHover)}>
+				FRONTEND
+			</Link>
+		</div>
+		<div className={cn(uiuxText)}>
+			<Link to="/about/curriculums?part=design" className={cn(textHover)}>
+				UXUI DESIGN
+			</Link>
+		</div>
 		<div className={cn(univ)}>
 			<div className="text-[60px] font-[100]">Exploding</div>
 			<div className="text-[98px]">X</div>
