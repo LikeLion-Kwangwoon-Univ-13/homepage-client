@@ -86,8 +86,8 @@ function AboutMenu({ hover, setHover }) {
 		onMouseEnter={() => setHover('/about')}
 		onMouseLeave={() => setHover(undefined)}
 		className={cn(container)}>
-		<Link to="/about">팀 소개</Link>
-		<Link to="/about">파트 소개</Link>
-		<Link to="/about">커리큘럼</Link>
+		<Link to="/teams">팀 소개</Link>
+		<Link to="/about/parts">파트 소개</Link>
+		<Link to="/about/curriculums">커리큘럼</Link>
 	</div>
 }
