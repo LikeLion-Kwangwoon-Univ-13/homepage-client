@@ -2,12 +2,34 @@ import React, { useEffect, useState } from "react";
 import ProjectListCard from "./ProjectListCard";
 import ListDummyProjects from "../Projectdummy";
 import ListDropdown from "./ListDropdown";
+import http from "../../../../../service/api/axios";
 
 const ProjectListSection = ({query}) => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    setProjects(ListDummyProjects);
+    const fetchProjects = async () => {
+      try {
+        const res = await http.get("/api/projects/history", {
+          params: {
+            cursor: 0,
+            limit: 12,
+          },
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        console.log("프로젝트 목록 api 응답: ", res.data);
+        setProjects(res.data.projects || [] );
+      } catch (error) {
+        console.error("프로젝트 목록 불러오기 실패: ",error);
+        if(error.response) {
+          console.log("응답 상태: ", error.response.status);
+          console.log("응답 내용", error.response.data);
+        }
+      }
+    };
+    fetchProjects();
   }, []);
 
   const [selectedGen, setSelectedGen] = useState("전체");
@@ -16,13 +38,13 @@ const ProjectListSection = ({query}) => {
   const handleGenChange = (val) => setSelectedGen(val);
   const handleActChange = (val) => setSelectedAct(val);
 
-  const filteredProjects = ListDummyProjects.filter((projects) => {
-    const matchGen = selectedGen === "전체" || projects.generation === selectedGen;
-    const matchAct = selectedAct === "전체" || projects.activity === selectedAct;
-    const matchQuery = query.trim() === "" || projects.title.toLowerCase().includes(query.toLowerCase());
+  const filteredProjects = projects.filter((project) => {
+    const matchGen = selectedGen === "전체" || project.generation === selectedGen;
+    const matchAct = selectedAct === "전체" || project.activity === selectedAct;
+    const matchQuery = query.trim() === "" || project.title.toLowerCase().includes(query.toLowerCase());
 
     return matchGen && matchAct && matchQuery;
-  })
+  });
 
   const isSmallCount = filteredProjects.length <= 2;
   return (
@@ -46,10 +68,11 @@ const ProjectListSection = ({query}) => {
     {filteredProjects.map((project, idx) => (
       <ProjectListCard
         key={idx}
+        id={project.id}
         title={project.title}
-        type={project.type}
-        description={project.description}
-        image={project.image}
+        type={project.part}
+        description={project.line_introduction}
+        image={project.url}
         isFixedSize={isSmallCount}
       />
     ))}
