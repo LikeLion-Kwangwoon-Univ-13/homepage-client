@@ -36,7 +36,7 @@ import ListDummyProjects from "../Projectdummy";
 //   },
 // ];
 
-export default function ProjectSection({projects}) {
+export default function ProjectSection({projects =[]}) {
     const [startIndex, setStartIndex] = useState(0);
     const navigate = useNavigate();
 
@@ -52,6 +52,10 @@ export default function ProjectSection({projects}) {
     const handleNext = () => {
         if (startIndex < projects.length -1) setStartIndex(startIndex + 1);
     };
+
+    if (!Array.isArray(projects) || projects.length === 0) {
+    return <p className="text-white pl-24">프로젝트가 없습니다.</p>;
+    }
 
     return (
         <section className="flex flex-row relative z-10 mt-[140px] pl-6 md:pl-24">

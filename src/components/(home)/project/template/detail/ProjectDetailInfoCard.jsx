@@ -7,7 +7,7 @@ export default function ProjectDetailInfoCard({project}) {
     <div style={{fontFamily: 'Space Grotesk'}} className="ml-[300px] px-[45px] pt-[32px] border rounded-[20px] w-[548px] h-[423px]">
         <h2 style={{fontSize: "24px", fontWeight: 700}} className="mb-[20px]">헌터X헌터</h2>
         <div className="mb-[20px] flex flex-row">
-            <div style={{fontSize: "20px", fontWeight: 700}} className="font-semibold whitespace-nowrap">팀원</div>
+            <div style={{fontSize: "20px", fontWeight: 700}} className="mr-[100px] font-semibold whitespace-nowrap">팀원</div>
             <TeamList team={project.team} />
         </div>
         <div className="mb-[20px] flex flex-row">
@@ -34,7 +34,7 @@ export default function ProjectDetailInfoCard({project}) {
                 {project.term}
             </div>
         </div>
-      <div className="flex gap-4 mt-4">
+      <div className="flex gap-4 mt-[20px]">
         <img src="/images/insta_svg.svg" alt="instagram" className="w-6 h-6" />
         <img src="/images/git_svg.svg" alt="github" className="w-6 h-6" />
       </div>
