@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
+import http from "@/service/api/axios"
 import BlogHighlightCard from "../FeaturedBlogCard"
 import PostPreviewCard from "../PostPreviewCard"
 import { useNavigate } from "react-router-dom"
@@ -14,7 +14,7 @@ export default function BlogHighlightSection() {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["blogs"],
     queryFn: async () => {
-      const res = await axios.get("/api/blog")
+      const res = await http.get("/api/blog")
       return res.data
     },
   })
