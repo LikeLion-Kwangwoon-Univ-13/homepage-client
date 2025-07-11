@@ -1,5 +1,11 @@
 import React from "react";
 
+const roleMap = {
+  프론트엔드: "frontend",
+  백엔드: "backend",
+  디자인: "design",
+};
+
 const TeamList = ({ team }) => {
   if (!Array.isArray(team) || team.length === 0) {
     return (
@@ -16,7 +22,7 @@ const TeamList = ({ team }) => {
         <div className="flex justify-end gap-x-5 leading-tight flex-wrap">
           {team.map((member) => (
             <span key={`${member.name}-${member.role}`} className="whitespace-nowrap">
-              {member.role} · {member.name}
+              {roleMap[member.role] || member.role} · {member.name}
             </span>
           ))}
         </div>
@@ -36,7 +42,7 @@ const TeamList = ({ team }) => {
         <div key={rowIdx} className="flex justify-end gap-x-5 leading-tight">
           {pair.map((member) => (
             <span key={`${member.name}-${member.role}`} className="whitespace-nowrap">
-              {member.role} · {member.name}
+              {roleMap[member.role] || member.role} · {member.name}
             </span>
           ))}
         </div>

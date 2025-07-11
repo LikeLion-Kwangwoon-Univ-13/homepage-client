@@ -1,40 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProjectMainCard from "./ProjectMainCard";
-import ListDummyProjects from "../Projectdummy";
-
-// const dummyProjects = [
-//   {
-//     id: 1,
-//     title: "KW-VIZER",
-//     description: "학사정보 기반 AI 진로 상담 챗봇",
-//     image: "/images/kwvizer.png",
-//   },
-//   {
-//     id: 2,
-//     title: "KW-VIZER",
-//     description: "학사정보 기반 AI 진로 상담 챗봇",
-//     image: "/images/kwvizer.png",
-//   },
-//   {
-//     id: 3,
-//     title: "KW-VIZER",
-//     description: "학사정보 기반 AI 진로 상담 챗봇",
-//     image: "/images/kwvizer.png",
-//   },
-//   {
-//     id: 4,
-//     title: "KW-VIZER",
-//     description: "학사정보 기반 AI 진로 상담 챗봇",
-//     image: "/images/kwvizer.png",
-//   },
-//   {
-//     id: 5,
-//     title: "KW-VIZER",
-//     description: "학사정보 기반 AI 진로 상담 챗봇",
-//     image: "/images/kwvizer.png",
-//   },
-// ];
 
 export default function ProjectSection({projects =[]}) {
     const [startIndex, setStartIndex] = useState(0);

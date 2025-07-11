@@ -5,7 +5,6 @@ import ProjectDetailInfoCard from "../../../../components/(home)/project/templat
 import ProjectFooter from "../../../../components/(home)/project/template/main/ProjectFooter";
 import ListDummyProjects from "../../../../components/(home)/project/template/Projectdummy";
 import http from "../../../../service/api/axios";
-import NotFound from "../../../404";
 import { useQuery } from "@tanstack/react-query";
 
 export default function ProjectDetailPage() {
@@ -34,12 +33,6 @@ export default function ProjectDetailPage() {
         };
       }),
   });
-
-  useEffect(() => {
-    if (project) {
-      console.log("API에서 받은 project 데이터:", project);
-    }
-  }, [project]);
 
 
   if (isLoading) return <p style={{fontFamily: 'Space Grotesk', fontSize: '20px'}} className="text-white">로딩 중...</p>;
