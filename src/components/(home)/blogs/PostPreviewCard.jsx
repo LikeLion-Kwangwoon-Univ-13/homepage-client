@@ -22,7 +22,7 @@ export default function PostPreviewCard({ id, title, summary, tags, imageUrl }) 
   }
 
   const titleStyle = "text-[26px] font-bold mb-2"
-  const summaryStyle = "text-[22px] text-gray-400 mb-4"
+  const summaryStyle = "text-[22px] text-gray-400 mb-4 line-clamp-2"
   const tagListStyle = "flex gap-2 flex-wrap"
   const tagStyle = {
     appearance: "rounded-full text-xs px-3 py-1 border",
