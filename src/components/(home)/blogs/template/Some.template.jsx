@@ -4,7 +4,7 @@ import BlogHighlightCard from "../FeaturedBlogCard"
 import PostPreviewCard from "../PostPreviewCard"
 import { useNavigate } from "react-router-dom"
 import Input from "../../../../components/(home)/_widget/Input"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { cn } from "@/utils"
 
 export default function BlogHighlightSection() {
@@ -19,17 +19,42 @@ export default function BlogHighlightSection() {
     },
   })
 
+  const highlightedPosts = data?.best ?? []
+  const recentPosts = data?.posts ?? []
+
+  // 검색 필터링
+  const filteredHighlighted = useMemo(() => {
+    if (!query.trim()) return highlightedPosts
+    return highlightedPosts.filter(
+      (post) =>
+        post.title.toLowerCase().includes(query.toLowerCase()) ||
+        post.contents.toLowerCase().includes(query.toLowerCase()) ||
+        post.tags.some((tag) =>
+          tag.toLowerCase().includes(query.toLowerCase())
+        )
+    )
+  }, [query, highlightedPosts])
+
+  const filteredRecent = useMemo(() => {
+    if (!query.trim()) return recentPosts
+    return recentPosts.filter(
+      (post) =>
+        post.title.toLowerCase().includes(query.toLowerCase()) ||
+        post.contents.toLowerCase().includes(query.toLowerCase()) ||
+        post.tags.some((tag) =>
+          tag.toLowerCase().includes(query.toLowerCase())
+        )
+    )
+  }, [query, recentPosts])
+
   if (isLoading)
-    return <p className={cn({ text: "text-white text-center mt-20" })}>로딩중</p>
+    return <p className="text-white text-center mt-20">로딩중</p>
   if (isError)
     return (
-      <p className={cn({ text: "text-red-500 text-center mt-20" })}>
+      <p className="text-red-500 text-center mt-20">
         데이터를 불러오는 데 실패했습니다.
       </p>
     )
-
-  const highlightedPosts = data.best ?? []
-  const recentPosts = data.posts ?? []
 
   const sectionStyle = {
     layout: "px-6 py-12 max-w-[1600px] mx-auto",
@@ -46,16 +71,16 @@ export default function BlogHighlightSection() {
 
   const highlightCardWrapper = {
     grid: "grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 justify-items-center",
-    card: "border-2 border-[#D9D9D9] w-[726px] h-[307px] rounded-2xl overflow-hidden white-space:nowrap text-overflow:ellipsis",
+    card: "border-2 border-[#D9D9D9] w-[726px] h-[307px] rounded-2xl overflow-hidden",
   }
 
   const recentSection = {
     wrapper: "mt-[110px]",
     headerRow: "flex justify-between items-center mb-6",
     heading: "text-[24px] font-bold",
-    moreBtn:
-      "text-[24px] font-bold text-white text-sm flex items-center gap-1",
+    moreBtn: "text-[24px] font-bold text-white text-sm flex items-center gap-1",
     postList: "flex flex-col divide-y divide-gray-700",
+    noResult: "text-gray-600 text-center mt-4",
   }
 
   return (
@@ -75,16 +100,22 @@ export default function BlogHighlightSection() {
       {/* 우수작 */}
       <h1 className={headingStyle}>이달의 멋사 블로그 우수작</h1>
       <div className={cn(highlightCardWrapper.grid)}>
-        {highlightedPosts.map((post) => (
-          <div key={post.id} className={cn(highlightCardWrapper.card)}>
-            <BlogHighlightCard
-              title={post.title}
-              description={post.contents}
-              tags={post.tags}
-              imageUrl={post.thumbnail}
-            />
+        {filteredHighlighted.length > 0 ? (
+          filteredHighlighted.map((post) => (
+            <div key={post.id} className={cn(highlightCardWrapper.card)}>
+              <BlogHighlightCard
+                title={post.title}
+                description={post.contents}
+                tags={post.tags}
+                imageUrl={post.thumbnail}
+              />
+            </div>
+          ))
+        ) : (
+        <div className="col-span-full flex justify-center items-center h-[300px]">
+          <p className={recentSection.noResult}>검색 결과가 없습니다.</p>
           </div>
-        ))}
+        )}
       </div>
 
       {/* 최신글 */}
@@ -100,15 +131,19 @@ export default function BlogHighlightSection() {
         </div>
 
         <div className={cn(recentSection.postList)}>
-          {recentPosts.slice(0, 5).map((post) => (
-            <PostPreviewCard
-              key={post.id}
-              title={post.title}
-              summary={post.contents}
-              tags={post.tags}
-              imageUrl={post.thumbnail}
-            />
-          ))}
+          {filteredRecent.length > 0 ? (
+            filteredRecent.slice(0, 5).map((post) => (
+              <PostPreviewCard
+                key={post.id}
+                title={post.title}
+                summary={post.contents}
+                tags={post.tags}
+                imageUrl={post.thumbnail}
+              />
+            ))
+          ) : (
+            <p className={recentSection.noResult}>검색 결과가 없습니다.</p>
+          )}
         </div>
       </div>
     </section>
