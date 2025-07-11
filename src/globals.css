@@ -5,6 +5,15 @@
   font-family: 'Space Grotesk', sans-serif;
 }
 
+@keyframes fadeIn{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+.fadein{
+  animation:fadeIn 4s ease-out forwards;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

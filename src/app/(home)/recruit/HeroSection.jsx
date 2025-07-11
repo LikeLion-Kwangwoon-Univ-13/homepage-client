@@ -71,7 +71,7 @@ export default function HeroSection() {
       />
 
       {/* 문구 */}
-      <div className={cn(title.base, "animate-fade-in")}>
+      <div className={cn(title.base, "fadein")}>
         <div className={cn(inlineWhite)}>BE THE </div>
         <div className={cn(inlineGold)}>LION</div>
         <div className={cn(inlineWhite)}>, CODE YOUR FUTURE</div>
@@ -81,7 +81,7 @@ export default function HeroSection() {
       </div>
 
       {/* 버튼 목록 */}
-      <div className={cn(rectWrap)}>
+      <div className={cn(rectWrap,"fadein")}>
         {["INSPIRE", "NETWORK", "INNOVATE", "PASSION", "JOURNEY"].map((word, i) => (
           <div key={i} className={cn(rectBox)}>
             {word}
