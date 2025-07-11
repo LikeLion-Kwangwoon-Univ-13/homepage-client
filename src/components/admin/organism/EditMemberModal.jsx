@@ -88,7 +88,7 @@ export default function EditMemberModal({ isOpen, onClose, onSubmit, member }) {
             type="text"
             value={formData.position}
             onChange={(e) => setFormData(prev => ({ ...prev, position: e.target.value }))}
-            placeholder="직책 (운영진/부원)"
+            placeholder="직책 (운영진/아기사자)"
             className="bg-[#1A1A1A] text-white p-2 rounded"
             required
           />

@@ -1,15 +1,46 @@
 import React from "react";
 
 const TeamList = ({ team }) => {
-  return (
-    <div style={{ fontFamily: 'Space Grotesk', fontSize: '20px' }} className="text-white">
-      <div className="flex flex-wrap justify-end gap-x-[21px] leading-tight">
-        {team.map((member, idx) => (
-          <span key={idx} className="m-0 p-0 whitespace-nowrap">
-            {member.role} · {member.name}
-          </span>
-        ))}
+  if (!Array.isArray(team) || team.length === 0) {
+    return (
+      <div style={{ fontFamily: 'Space Grotesk', fontSize: '20px' }} className="text-white text-right">
+        팀 정보 없음
       </div>
+    );
+  }
+
+  // 2명 이하면 한 줄
+  if (team.length <= 2) {
+    return (
+      <div style={{ fontFamily: 'Space Grotesk', fontSize: '20px' }} className="text-white">
+        <div className="flex justify-end gap-x-5 leading-tight flex-wrap">
+          {team.map((member) => (
+            <span key={`${member.name}-${member.role}`} className="whitespace-nowrap">
+              {member.role} · {member.name}
+            </span>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // 3명 이상이면 2명씩 줄바꿈
+  const chunkedTeam = [];
+  for (let i = 0; i < team.length; i += 2) {
+    chunkedTeam.push(team.slice(i, i + 2));
+  }
+
+  return (
+    <div style={{ fontFamily: 'Space Grotesk', fontSize: '20px' }} className="text-white space-y-[4px]">
+      {chunkedTeam.map((pair, rowIdx) => (
+        <div key={rowIdx} className="flex justify-end gap-x-5 leading-tight">
+          {pair.map((member) => (
+            <span key={`${member.name}-${member.role}`} className="whitespace-nowrap">
+              {member.role} · {member.name}
+            </span>
+          ))}
+        </div>
+      ))}
     </div>
   );
 };

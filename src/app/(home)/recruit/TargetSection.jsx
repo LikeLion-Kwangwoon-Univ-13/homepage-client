@@ -25,9 +25,10 @@ export default function TargetSection() {
   const cardBox = cn(
     "w-[380px]",
     "h-[350px]",
-    "bg-[#F0F0F0]/50",
+    "bg-[#F0F0F0]/70",
     "rounded-[24px]",
-    "shadow-[0_4px_15px_0_rgba(255,205,132,0.25)]",
+    "shadow-xl",
+    "filter drop-shadow-[0_0_15px_rgba(255,205,152,0.5)]",
     "px-[48px]",
     "pt-[43px]",
     "pb-[43px]",

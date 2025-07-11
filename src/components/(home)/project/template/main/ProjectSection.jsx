@@ -36,7 +36,7 @@ import ListDummyProjects from "../Projectdummy";
 //   },
 // ];
 
-export default function ProjectSection() {
+export default function ProjectSection({projects =[]}) {
     const [startIndex, setStartIndex] = useState(0);
     const navigate = useNavigate();
 
@@ -50,8 +50,12 @@ export default function ProjectSection() {
     };
 
     const handleNext = () => {
-        if (startIndex < 4) setStartIndex(startIndex + 1);
+        if (startIndex < projects.length -1) setStartIndex(startIndex + 1);
     };
+
+    if (!Array.isArray(projects) || projects.length === 0) {
+    return <p className="text-white pl-24">프로젝트가 없습니다.</p>;
+    }
 
     return (
         <section className="flex flex-row relative z-10 mt-[140px] pl-6 md:pl-24">
@@ -80,10 +84,15 @@ export default function ProjectSection() {
                     transform: `translateX(-${startIndex * (CARD_WIDTH + GAP)}px)`,
                 }}
                 >
-                {ListDummyProjects.filter(project => project.id >= 1 && project.id <= 5)
-                .map((project) => (
-                    <ProjectMainCard key={project.id} project={project} />
-                ))}
+                {projects.map((project, index) => {
+                    console.log("project in map:", project); 
+                    return (
+                    <ProjectMainCard key={index} project={{
+                        idx: index + 1,
+                        title: project.title,
+                        description: project.line_introduction,
+                        thumbnail: project.url }} />
+                )})}
                 </div>
             </div>
         </section>

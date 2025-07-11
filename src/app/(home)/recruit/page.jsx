@@ -18,7 +18,7 @@ export default function RecruitPage() {
       <TimelineSection />
 
       <footer
-        className="w-full h-[79px] bg-cover bg-center bg-no-repeat text-white text-[20px] font-space mt-[310px]"
+        className="w-full h-[79px] bg-cover bg-center bg-no-repeat text-white text-[20px] font-space mt-[250px]"
         style={{
           backgroundImage: "url('/images/background.png')",
           backgroundColor: "#1A1A1A"

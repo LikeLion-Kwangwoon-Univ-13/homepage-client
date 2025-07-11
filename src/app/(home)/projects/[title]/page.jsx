@@ -1,19 +1,51 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams,useNavigate, useLocation } from "react-router-dom";
 import ProjectSummarySection from "../../../../components/(home)/project/template/detail/ProjectSummarySection";
 import ProjectDetailInfoCard from "../../../../components/(home)/project/template/detail/ProjectDetailInfoCard";
 import ProjectFooter from "../../../../components/(home)/project/template/main/ProjectFooter";
 import ListDummyProjects from "../../../../components/(home)/project/template/Projectdummy";
+import http from "../../../../service/api/axios";
+import NotFound from "../../../404";
+import { useQuery } from "@tanstack/react-query";
 
 export default function ProjectDetailPage() {
-  const { title } = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const project = ListDummyProjects.find(p=> p.title === decodeURIComponent(title));
-  const images = project?.images || [];
-
+//const project = ListDummyProjects.find(p=> p.title === decodeURIComponent(title));
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const { data: project, isLoading, isError, error } = useQuery({
+    queryKey: ["project-detail", id],
+    queryFn: () =>
+      http.get(`/api/projects/${id}`).then((res) => {
+        const data = res.data;
+        const formattedTerm = data.start_Date && data.end_Date ? `${data.start_Date.slice(0, 10)} ~ ${data.end_Date.slice(0, 10)}` : "기간 정보 없음";
+        return {
+          ...data,
+          title: data.title,
+          team: Object.entries(data.project_member).map(([name, role]) => ({ name, role })),
+          stack: data.stacks.join(", "),
+          generation: data.generation || "없음",
+          type: data.part,
+          term: formattedTerm,
+          images: [data.url],
+        };
+      }),
+  });
+
+  useEffect(() => {
+    if (project) {
+      console.log("API에서 받은 project 데이터:", project);
+    }
+  }, [project]);
+
+
+  if (isLoading) return <p style={{fontFamily: 'Space Grotesk', fontSize: '20px'}} className="text-white">로딩 중...</p>;
+  if (isError) return <p style={{fontFamily: 'Space Grotesk', fontSize: '20px'}} className="text-white">오류 발생: {error.message}</p>;
+
+  const images = project?.images || [];
 
   const goNext = () => {
     setCurrentIndex((prevIndex) =>
@@ -28,6 +60,8 @@ export default function ProjectDetailPage() {
   };
 
   const backPath = location.state?.from === "main" ? "/projects" : "/projects/projectlist";
+
+  if (!project) return <div className="text-white">로딩 중...</div>;
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white px-6 md:px-24">
@@ -56,7 +90,7 @@ export default function ProjectDetailPage() {
 
             <div className="mt-[40px] flex flex-row">
                 <ProjectDetailInfoCard project={project}/>
-                <ProjectSummarySection title={title} />
+                <ProjectSummarySection title={project.title} introduction={project.introduction}/>
             </div>
         </div>
         <ProjectFooter/>

@@ -12,20 +12,20 @@ export default function HeroSection() {
 
   const title = {
     base: cn(
-      "w-[1225px]",
+      "w-[1250px]",
       "h-[204px]",
-      "opacity-80",
       "text-[80px]",
       "leading-[100%]",
       "text-center",
       "font-space",
       "font-light",
-      "tracking-[0%]"
+      "tracking-[0%]",
+      "filter drop-shadow-[0_0_2px_rgba(255,205,152,0.5)]"
     )
   };
 
-  const inlineWhite = cn("inline text-white font-space");
-  const inlineGold = cn("inline text-[#FFCD84] font-space");
+  const inlineWhite = cn("inline text-white");
+  const inlineGold = cn("inline text-[#FFCD84]");
 
   const rectWrap = cn(
     "flex",
@@ -44,7 +44,8 @@ export default function HeroSection() {
     "border-[2px] border-white",
     "rounded-full",
     "text-white",
-    "text-[16px]",
+    "text-[20px]",
+    "font-space",
     "font-medium",
     "flex items-center justify-center",
     "pointer-events-none",
@@ -70,7 +71,7 @@ export default function HeroSection() {
       />
 
       {/* 문구 */}
-      <div className={cn(title.base)}>
+      <div className={cn(title.base, "animate-fade-in")}>
         <div className={cn(inlineWhite)}>BE THE </div>
         <div className={cn(inlineGold)}>LION</div>
         <div className={cn(inlineWhite)}>, CODE YOUR FUTURE</div>
@@ -95,7 +96,7 @@ export default function HeroSection() {
         className={applyBtn.base}
         style={{
           position: "fixed",          
-          bottom: "40px",               
+          bottom: "65px",               
           right: "90px",     
           width: "282.71px",
           height: "70.78px",
