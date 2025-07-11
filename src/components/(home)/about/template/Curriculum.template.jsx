@@ -99,9 +99,9 @@ const Curriculum = () => {
 					<div className="text-gray-400">© 2025 LIKE LION KWUNIV</div>
 					<div className="flex items-center gap-3 mr-[23px]">
 						<span>Contact us!</span>
-						<img src="/images/Email.png" alt="mail" className="w-4 h-4" />
-						<img src="/images/insta.png" alt="insta" className="w-4 h-4" />
-						<img src="/images/git.png" alt="github" className="w-4 h-4" />
+						<img src="/images/Email.png" onClick={() => window.open('kwu@likelion.org')} alt="mail" className="w-4 h-4" />
+						<img src="/images/insta.png" onClick={() => window.open('https://www.instagram.com/likelion_kwangwoon/')} alt="insta" className="w-4 h-4" />
+						<img src="/images/git.png" onClick={() => window.open('https://github.com/LikeLion-Kwangwoon-Univ-13')} alt="github" className="w-4 h-4" />
 					</div>
 				</footer>
 			</div>

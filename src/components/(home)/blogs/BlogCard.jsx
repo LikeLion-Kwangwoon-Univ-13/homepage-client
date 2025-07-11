@@ -5,7 +5,7 @@ export default function BlogCard({ title, summary, tags }) {
 				{/* 텍스트 */}
 				<div className="flex-1">
 					<h3 className="text-lg font-bold mb-2">{title}</h3>
-					<p className="text-sm text-gray-300 mb-2">{summary}</p>
+					<p className="text-sm text-gray-300 mb-2 line-clamp-2">{summary}</p>
 					<div className="flex flex-wrap gap-2">
 						{tags.map((tag, idx) => (
 							<span key={idx} className="border border-white px-2 py-1 rounded-full text-xs">

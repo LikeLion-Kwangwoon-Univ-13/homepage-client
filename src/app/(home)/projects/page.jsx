@@ -9,7 +9,7 @@ export default function Page() {
 			<Routes>
 				<Route index element={<ProjectMain/>}/>
 				<Route path="projectlist" element={<ProjectListPage/>}/>
-				<Route path="projectpage/:title" element={<ProjectDetailPage/>}/>
+				<Route path=":id" element={<ProjectDetailPage/>}/>
 			</Routes>
 		</>
 	)
