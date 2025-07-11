@@ -13,7 +13,7 @@ export default function BlogHighlightCard({ title, description, tags, imageUrl }
   }
 
   const titleStyle = 'text-[32px] font-bold mb-2'
-  const descriptionStyle = 'text-[22px] text-gray-300 mb-4 line-clamp-1'
+  const descriptionStyle = 'text-[18px] text-gray-300 mb-4 truncate max-w-[340px]'
   const tagList = 'flex gap-2 flex-wrap'
   const tagStyle = {
     appearance: 'rounded-full text-xs px-3 py-1 border',
