@@ -127,6 +127,7 @@ export default function BlogAllPage() {
                 summary={post.contents}
                 tags={post.tags}
                 imageUrl={post.thumbnail}
+                onClick={() => navigate(post.url)}
               />
             ))
           ) : (

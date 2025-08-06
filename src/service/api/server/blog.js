@@ -117,4 +117,5 @@ const blogApi={
 	patchCancelBest,
 	_delete
 }
+
 export default blogApi

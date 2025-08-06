@@ -139,6 +139,7 @@ export default function BlogHighlightSection() {
                 summary={post.contents}
                 tags={post.tags}
                 imageUrl={post.thumbnail}
+                url={post.url}
               />
             ))
           ) : (

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { cn } from "@/utils"
 
-export default function PostPreviewCard({ id, title, summary, tags, imageUrl }) {
+export default function PostPreviewCard({ id, title, summary, tags, imageUrl, url  }) {
   const navigate = useNavigate()
 
   const cardOuter = {
@@ -38,7 +38,7 @@ export default function PostPreviewCard({ id, title, summary, tags, imageUrl }) 
   const imageStyle = "w-full h-full object-contain rounded-md"
 
   return (
-    <div onClick={() => navigate(`/blogs/${id}`)} className={cn(cardOuter)}>
+    <div onClick={() => window.open(url,"_blank")} className={cn(cardOuter)}>
       <div className={cn(innerWrapper)}>
         {/* 텍스트 */}
         <div className={cn(textBlock)}>
