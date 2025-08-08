@@ -49,7 +49,7 @@ export default function BlogAllPage() {
   if (isError) {
     return (
       <p className={cn({ text: "text-red-500 text-center mt-20" })}>
-        블로그 데이터를 불러오는 데 실패했습니다.
+        오류 : 관리자에게 문의하세요.
       </p>
     )
   }

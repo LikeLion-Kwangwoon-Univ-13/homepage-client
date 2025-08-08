@@ -51,8 +51,8 @@ export default function BlogHighlightSection() {
     return <p className="text-white text-center mt-20">로딩중</p>
   if (isError)
     return (
-      <p className="text-red-500 text-center mt-20">
-        데이터를 불러오는 데 실패했습니다.
+      <p className="text-red text-center mt-50">
+        오류 : 관리자에게 문의하세요.
       </p>
     )
 
@@ -71,7 +71,7 @@ export default function BlogHighlightSection() {
 
   const highlightCardWrapper = {
     grid: "grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 justify-items-center",
-    card: "border-2 border-[#D9D9D9] w-[726px] h-[307px] rounded-2xl overflow-hidden",
+    card: "border-2 border-[#FFFFFF] w-[726px] h-[307px] rounded-2xl overflow-hidden",
   }
 
   const recentSection = {
