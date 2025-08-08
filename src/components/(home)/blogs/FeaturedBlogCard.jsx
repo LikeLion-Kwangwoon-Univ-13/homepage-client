@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom"
 import { cn } from "@/utils"
 
-export default function BlogHighlightCard({ title, description, tags, imageUrl }) {
+export default function BlogHighlightCard({ title, description, tags, imageUrl, url }) {
+  const navigate = useNavigate;
+
   const cardContainer = {
     layout: 'flex items-center',
     size: 'w-[726px] h-[307px]',
@@ -29,7 +32,7 @@ export default function BlogHighlightCard({ title, description, tags, imageUrl }
   const imageStyle = 'w-full h-full object-contain rounded-md'
 
   return (
-    <div className={cn(cardContainer)}>
+    <div onClick={() => window.open(url,"_blank")} className={cn(cardContainer)}>
       <div className={cn(textContainer)}>
         <h2 className={titleStyle}>{title}</h2>
         <p className={descriptionStyle}>{description}</p>

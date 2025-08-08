@@ -108,6 +108,7 @@ export default function BlogHighlightSection() {
                 description={post.contents}
                 tags={post.tags}
                 imageUrl={post.thumbnail}
+                url={post.url}
               />
             </div>
           ))
