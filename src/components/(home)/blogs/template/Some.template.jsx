@@ -71,14 +71,14 @@ export default function BlogHighlightSection() {
 
   const highlightCardWrapper = {
     grid: "grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 justify-items-center",
-    card: "border-2 border-[#FFFFFF] w-[726px] h-[307px] rounded-2xl overflow-hidden",
+    card: "border-2 border-[#FFFFFF] w-[726px] h-[307px] rounded-[12px] overflow-hidden",
   }
 
   const recentSection = {
     wrapper: "mt-[110px]",
     headerRow: "flex justify-between items-center mb-6",
     heading: "text-[24px] font-bold",
-    moreBtn: "text-[24px] font-bold text-white text-sm flex items-center gap-1",
+    moreBtn: "text-[16px] font-normal text-white flex items-center gap-1 hover:text-gray-300 transition-colors",
     postList: "flex flex-col divide-y divide-gray-700",
     noResult: "text-gray-600 text-center mt-4",
   }
@@ -104,9 +104,9 @@ export default function BlogHighlightSection() {
           filteredHighlighted.map((post) => (
             <div key={post.id} className={cn(highlightCardWrapper.card)}>
               <BlogHighlightCard
-                title={post.title}
-                description={post.contents}
-                tags={post.tags}
+                title={post.title || '제목 없음'}
+                description={post.contents || '내용이 없습니다.'}
+                tags={post.tags || []}
                 imageUrl={post.thumbnail}
                 url={post.url}
               />
@@ -127,18 +127,18 @@ export default function BlogHighlightSection() {
             onClick={() => navigate("/blogs/all")}
             className={recentSection.moreBtn}
           >
-            더보기 <span className="text-[24px] font-bold">+</span>
+            더보기 <span className="text-[16px]">+</span>
           </button>
         </div>
 
         <div className={cn(recentSection.postList)}>
           {filteredRecent.length > 0 ? (
-            filteredRecent.slice(0, 5).map((post) => (
+            filteredRecent.map((post) => (
               <PostPreviewCard
                 key={post.id}
-                title={post.title}
-                summary={post.contents}
-                tags={post.tags}
+                title={post.title || '제목 없음'}
+                summary={post.contents || '내용이 없습니다.'}
+                tags={post.tags || []}
                 imageUrl={post.thumbnail}
                 url={post.url}
               />

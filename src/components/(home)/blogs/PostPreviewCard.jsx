@@ -5,24 +5,22 @@ export default function PostPreviewCard({ id, title, summary, tags, imageUrl, ur
   const navigate = useNavigate()
 
   const cardOuter = {
-    layout:
-      "flex items-center text-white cursor-pointer hover:border-white transition duration-200",
+    layout: "flex items-center text-white cursor-pointer",
     border: "border-b border-gray-700",
-    size: "w-[1490px] h-[300px]",
+    size: "w-full max-w-[1490px] min-h-[300px] py-8",
   }
 
   const innerWrapper = {
-    layout: "flex items-center text-white",
-    border: "border-b border-gray-700",
-    size: "w-[1490px] h-[300px]",
+    layout: "flex items-center text-white w-full",
+    spacing: "gap-8",
   }
 
   const textBlock = {
-    layout: "flex flex-col flex-1 pl-7",
+    layout: "flex flex-col flex-1 px-6",
   }
 
   const titleStyle = "text-[26px] font-bold mb-2"
-  const summaryStyle = "text-[18px] text-gray-400 mb-6 line-clamp-2 max-w-[800px]"
+  const summaryStyle = "text-[18px] text-[#B3B3B3] mb-6 line-clamp-2 max-w-[800px]"
   const tagListStyle = "flex gap-2 flex-wrap"
   const tagStyle = {
     appearance: "rounded-full text-xs px-3 py-1 border",
@@ -30,8 +28,8 @@ export default function PostPreviewCard({ id, title, summary, tags, imageUrl, ur
   }
 
   const imageWrapper = {
-    layout: "bg-[#111] border rounded-xl p-2",
-    size: "w-[375px] h-[211px] mr-[49px]",
+    layout: "bg-[#111] border rounded-[12px] p-2 flex-shrink-0",
+    size: "w-[375px] h-[211px]",
     border: "border-[#D9D9D9]",
   }
 
@@ -45,7 +43,7 @@ export default function PostPreviewCard({ id, title, summary, tags, imageUrl, ur
           <h3 className={titleStyle}>{title}</h3>
           <p className={summaryStyle}>{summary}</p>
           <div className={tagListStyle}>
-            {tags.map((tag, i) => (
+            {tags && tags.map((tag, i) => (
               <span key={i} className={cn(tagStyle)}>
                 {tag}
               </span>
@@ -56,9 +54,12 @@ export default function PostPreviewCard({ id, title, summary, tags, imageUrl, ur
         {/* 이미지 */}
         <div className={cn(imageWrapper)}>
           <img
-            src={imageUrl || "/kw_univ_emblem.png"}
+            src={imageUrl || "/images/kwlogo.png"}
             alt={title}
             className={imageStyle}
+            onError={(e) => {
+              e.target.src = "/images/kwlogo.png"
+            }}
           />
         </div>
       </div>

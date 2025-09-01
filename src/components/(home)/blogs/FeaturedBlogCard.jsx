@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { cn } from "@/utils"
 
 export default function BlogHighlightCard({ title, description, tags, imageUrl, url }) {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const cardContainer = {
     layout: 'flex items-center',
@@ -24,7 +24,7 @@ export default function BlogHighlightCard({ title, description, tags, imageUrl, 
   }
 
   const imageWrapper = {
-    box: 'border rounded-xl bg-[#111] p-2',
+    box: 'border rounded-[12px] bg-[#111] p-2',
     size: 'w-[245px] h-[140px] mr-[35.05px]',
     border: 'border-[#D9D9D9]',
   }
@@ -37,16 +37,23 @@ export default function BlogHighlightCard({ title, description, tags, imageUrl, 
         <h2 className={titleStyle}>{title}</h2>
         <p className={descriptionStyle}>{description}</p>
         <div className={tagList}>
-          {tags.map((tag, i) => (
+          {tags && tags.map((tag, i) => (
             <span key={i} className={cn(tagStyle)}>
               {tag}
             </span>
           ))}
         </div>
-      </div>
+      </div> 
 
       <div className={cn(imageWrapper)}>
-        <img src={imageUrl} alt={title} className={imageStyle} />
+        <img 
+          src={imageUrl || "/images/kwlogo.png"} 
+          alt={title} 
+          className={imageStyle}
+          onError={(e) => {
+            e.target.src = "/images/kwlogo.png"
+          }}
+        />
       </div>
     </div>
   )

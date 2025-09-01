@@ -19,6 +19,17 @@ export default function BlogPage() {
     }
   }
 
+  const handleDelete = async (id) => {
+    if (confirm('정말로 삭제하시겠습니까?')) {
+      try {
+        await deletePost.mutateAsync(id)
+        alert('블로그가 삭제되었습니다.')
+      } catch (error) {
+        alert('블로그 삭제에 실패했습니다.')
+      }
+    }
+  }
+
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
@@ -86,14 +97,16 @@ export default function BlogPage() {
                   <button
                     onClick={() => cancelBestPost.mutate(post.id)}
                     className="bg-gray-500 text-white px-3 py-1 rounded hover:bg-[#DC2626] transition-colors"
+                    disabled={cancelBestPost.isLoading}
                   >
-                    베스트 해제
+                    {cancelBestPost.isLoading ? '처리중...' : '베스트 해제'}
                   </button>
                   <button
-                    onClick={() => deletePost.mutate(post.id)}
+                    onClick={() => handleDelete(post.id)}
                     className="bg-[#DC2626] text-white px-3 py-1 rounded hover:bg-[#B91C1C] transition-colors"
+                    disabled={deletePost.isLoading}
                   >
-                    삭제
+                    {deletePost.isLoading ? '삭제중...' : '삭제'}
                   </button>
                 </div>
               </div>
@@ -157,14 +170,16 @@ export default function BlogPage() {
                   <button
                     onClick={() => setBestPost.mutate(post.id)}
                     className="bg-[#E74F13] text-white px-3 py-1 rounded hover:bg-[#D63F0F] transition-colors"
+                    disabled={setBestPost.isLoading}
                   >
-                    베스트 설정
+                    {setBestPost.isLoading ? '설정중...' : '베스트 설정'}
                   </button>
                   <button
                     onClick={() => handleDelete(post.id)}
                     className="bg-[#DC2626] text-white px-3 py-1 rounded hover:bg-[#B91C1C] transition-colors"
+                    disabled={deletePost.isLoading}
                   >
-                    삭제
+                    {deletePost.isLoading ? '삭제중...' : '삭제'}
                   </button>
                 </div>
               </div>

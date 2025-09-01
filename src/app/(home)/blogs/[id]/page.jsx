@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { cn } from "@/utils";
 import http from "../../../../service/api/axios";
 
 export default function BlogDetailPage() {
@@ -11,6 +12,8 @@ export default function BlogDetailPage() {
       const res = await http.get("/api/blog");
       return res.data.posts.find((post) => String(post.id) === id);
     },
+    enabled: !!id, // id가 있을 때만 쿼리 실행
+    retry: 2, // 실패 시 2번 재시도
   });
 
   const loadingStyle = { text: "text-white text-center mt-20" };
@@ -36,9 +39,11 @@ export default function BlogDetailPage() {
     <div className={cn(pageWrapper)}>
       <h1 className={titleStyle}>{data.title}</h1>
       <div className={contentStyle}>{data.contents}</div>
-      <img src={data.thumbnail} alt={data.title} className={imageStyle} />
+      {data.thumbnail && (
+        <img src={data.thumbnail} alt={data.title} className={imageStyle} />
+      )}
       <div className={tagList}>
-        {data.tags.map((tag, idx) => (
+        {data.tags && data.tags.map((tag, idx) => (
           <span key={idx} className={tagStyle}>
             {tag}
           </span>

@@ -51,7 +51,7 @@ export default function AdminDashboard() {
           <h2 className="text-xl font-semibold text-white mb-4">최근 블로그 게시글</h2>
           {blogs && blogs.length > 0 ? (
             <div className="space-y-4">
-              {blogs.slice(0, 5).map((blog) => (
+              {blogs.map((blog) => (
                 <div key={blog.id} className="flex items-start gap-4">
                   {blog.thumbnail && (
                     <img

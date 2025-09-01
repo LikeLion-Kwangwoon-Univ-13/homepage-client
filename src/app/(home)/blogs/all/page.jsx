@@ -10,13 +10,13 @@ import http from "../../../../service/api/axios"
 export default function BlogAllPage() {
   const navigate = useNavigate()
   const [query, setQuery] = useState("")
+  const [currentPage, setCurrentPage] = useState(1)
+  const postsPerPage = 10
 
-  // 스크롤 맨 위로
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  // API 호출
   const { data, isLoading, isError } = useQuery({
     queryKey: ["blogs"],
     queryFn: async () => {
@@ -27,18 +27,27 @@ export default function BlogAllPage() {
 
   const recentPosts = data?.posts ?? [];
 
-  // 검색어 필터링
   const filteredPosts = useMemo(() => {
     if (!query.trim()) return recentPosts
     return recentPosts.filter(
       (post) =>
         post.title.toLowerCase().includes(query.toLowerCase()) ||
         post.contents.toLowerCase().includes(query.toLowerCase()) ||
-        post.tags.some((tag) =>
+        (post.tags && post.tags.some((tag) =>
           tag.toLowerCase().includes(query.toLowerCase())
-        )
+        ))
     )
   }, [query, recentPosts])
+
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage)
+  const currentPosts = useMemo(() => {
+    const startIndex = (currentPage - 1) * postsPerPage
+    return filteredPosts.slice(startIndex, startIndex + postsPerPage)
+  }, [filteredPosts, currentPage, postsPerPage])
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [query])
 
   if (isLoading) {
     return (
@@ -55,7 +64,7 @@ export default function BlogAllPage() {
   }
 
   const pageStyle = {
-    layout: "w-full min-h-screen bg-black text-white px-6 py-12",
+    layout: "w-full min-h-screen bg-[#1A1A1A] text-white px-8 py-12",
   }
 
   const backBtnWrapper = {
@@ -63,8 +72,8 @@ export default function BlogAllPage() {
   }
 
   const backBtn = {
-    icon: "w-6 h-6",
-    button: "mr-4",
+    icon: "w-8 h-8",
+    button: "mr-4 p-2 hover:bg-gray-800 rounded-full transition-colors",
   }
 
   const searchWrapper = {
@@ -80,9 +89,18 @@ export default function BlogAllPage() {
     noResult: "text-gray-600 text-center mt-4",
   }
 
+
+
+  const paginationStyle = {
+    container: "flex justify-center items-center mt-12 gap-4",
+    button: "text-white hover:text-gray-300 transition-colors text-lg font-medium",
+    currentButton: "text-white font-bold text-lg",
+    separator: "text-white mx-2",
+    nextButton: "text-white hover:text-gray-300 transition-colors text-lg font-medium ml-4"
+  }
+
   return (
     <div className={cn(pageStyle)}>
-      {/* 뒤로가기 */}
       <div className={cn(backBtnWrapper.container)}>
         <button onClick={() => navigate(-1)} className={cn(backBtn.button)}>
           <svg
@@ -102,7 +120,6 @@ export default function BlogAllPage() {
         </button>
       </div>
 
-      {/* 검색창 */}
       <div className={cn(searchWrapper.container)}>
         <div className={cn(searchWrapper.inner)}>
           <Input
@@ -112,28 +129,51 @@ export default function BlogAllPage() {
         </div>
       </div>
 
-      {/* 본문 */}
       <div className={cn(contentWrapper.container)}>
         <div className={cn(contentWrapper.header)}>
           <h2 className={cn(contentWrapper.heading)}>최신글</h2>
         </div>
 
         <div className={cn(contentWrapper.postList)}>
-          {filteredPosts.length > 0 ? (
-            filteredPosts.map((post) => (
+          {currentPosts.length > 0 ? (
+            currentPosts.map((post) => (
               <PostPreviewCard
                 key={post.id}
-                title={post.title}
-                summary={post.contents}
-                tags={post.tags}
+                title={post.title || '제목 없음'}
+                summary={post.contents || '내용이 없습니다.'}
+                tags={post.tags || []}
                 imageUrl={post.thumbnail}
-                onClick={() => navigate(post.url)}
+                url={post.url}
               />
             ))
           ) : (
             <p className={cn(contentWrapper.noResult)}>검색 결과가 없습니다.</p>
           )}
         </div>
+
+        {totalPages > 1 && (
+          <div className={cn(paginationStyle.container)}>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={currentPage === page ? cn(paginationStyle.currentButton) : cn(paginationStyle.button)}
+              >
+                {page}
+              </button>
+            ))}
+            
+            <span className={cn(paginationStyle.separator)}>|</span>
+            
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={cn(paginationStyle.nextButton)}
+            >
+              다음 >
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )
